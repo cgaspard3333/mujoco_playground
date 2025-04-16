@@ -1,0 +1,2205 @@
+<?xml version="1.0"?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape
+https://cad.onshape.com/documents/62a76f7d866be3ef835dd2e4/v/53bc1f0fe452da20430e5612/e/579abee38f1dbd98a5a2bc84 -->
+<mujoco model="sigmaban">
+    <compiler angle="radian" meshdir="../../../../../mujoco_menagerie/berkeley_humanoid/assets" autolimits="true" />
+    <default>
+        <default class="mujoco">
+            <default class="visual">
+                <geom type="mesh" contype="0" conaffinity="0" group="2" />
+            </default>
+            <default class="collision">
+                <geom group="3" />
+            </default>
+        </default>
+    </default>
+
+    <!-- KP=12 -->
+    <default>
+        <default class="mx106">
+            <position kp="20.231304211690944" forcerange="-8 8" /> <!-- forcerange = 11.086253609343494 -->
+            <joint damping="1.6548121650255068" armature="0.026609234235148" frictionloss="0.10352026623606064" />
+        </default>
+        <default class="mx64">
+            <position kp="11.245307142692706" forcerange="-5 5" /> <!-- forcerange = 6.16214978502532 -->
+            <joint damping="0.6782171611803074" armature="0.011951238325312509" frictionloss="0.09038677246291783" />
+        </default>
+    </default>
+
+    <option noslip_iterations="4" />
+
+    <worldbody>
+        <!-- Link torso_2023 -->
+        <body name="torso_2023" pos="0 0 0" quat="1 0 0 0" childclass="mujoco">
+            <freejoint name="torso_2023_freejoint" />
+            <site name="torso" />
+            <inertial pos="0.00195299 -0.000398651 0.0706493" mass="3.21021"
+                fullinertia="0.0195525 0.0183726 0.0124607 0.000166172 0.00031206 -0.000170714" />
+            <!-- Part ecrou_2_5 -->
+            <!-- Part equerre_d -->
+            <!-- Part m2_5x8__configuration_copy_of_6 -->
+            <!-- Part fr05_s101 -->
+            <geom type="mesh" class="visual" pos="0.0283892 -0.0559999 0.14"
+                quat="0.707107 0.707107 2.9976e-15 8.2996e-15" mesh="fr05_s101"
+                material="fr05_s101_material" />
+            <!-- Part m3x14__configuration__18 -->
+            <!-- Part support_lipo3200 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_2 -->
+            <!-- Part equerre_15x20 -->
+            <!-- Part m3x10__configuration__14 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_3 -->
+            <!-- Part m5x14__configuration__14 -->
+            <!-- Part m3x14__configuration__18_2 -->
+            <!-- Part emergency_button__spacing_0_005_meter -->
+            <!-- Part rondelle_3__nominal_diam_default -->
+            <!-- Part m2_5x8__configuration_copy_of_6_4 -->
+            <!-- Part m2_5x6__configuration__6 -->
+            <!-- Part ecrou_2_5_2 -->
+            <!-- Part lipo3200 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_5 -->
+            <!-- Part rondelle_3__nominal_diam_default_2 -->
+            <!-- Part m3x10__configuration__14_2 -->
+            <!-- Part hip_reinforcement -->
+            <!-- Part ecrou_2_5_3 -->
+            <!-- Part ecrou_2_5_4 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_6 -->
+            <!-- Part x_plate_23_front -->
+            <geom class="collision" pos="-0.0596108 1.47174e-07 0.0719177" quat="0.5 0.5 0.5 0.5"
+                type="box" size="0.0725 0.057796 0.003" />
+            <geom type="mesh" class="visual" pos="-0.0626108 1.47174e-07 0.072"
+                quat="0.707107 -2.58528e-15 1.88738e-15 0.707107" mesh="x_plate_23_front"
+                material="x_plate_23_front_material" />
+            <!-- Part ecrou_2_5_5 -->
+            <!-- Part m2_5x6__configuration__6_2 -->
+            <!-- Part m2_5x16__configuration__16 -->
+            <!-- Part ecrou_3_nylstop__nylstop_true -->
+            <!-- Part chestplate_marker -->
+            <geom type="mesh" class="visual" pos="-0.0616108 7.3463e-05 0.0679601"
+                quat="2.5063e-15 0.707107 -0.707107 3.00792e-15" mesh="chestplate_marker"
+                material="chestplate_marker_material" />
+            <!-- Part torso_top_plate_nuc_23 -->
+            <geom type="mesh" class="visual" pos="0.0583892 1.47174e-07 0.135"
+                quat="0.707107 -2.65296e-15 1.11022e-16 0.707107" mesh="torso_top_plate_nuc_23"
+                material="torso_top_plate_nuc_23_material" />
+            <!-- Part m3x14__configuration__18_3 -->
+            <!-- Part m3x10__configuration__14_3 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_7 -->
+            <!-- Part chestplate -->
+            <geom type="mesh" class="visual" pos="-0.0626108 -1.41242e-06 0.0679121"
+                quat="2.4351e-15 0.707107 -0.707107 3.00203e-15" mesh="chestplate"
+                material="chestplate_material" />
+            <!-- Part equerre_20x20 -->
+            <!-- Part m2_5x6__configuration__6_3 -->
+            <!-- Part rondelle_3__nominal_diam_default_3 -->
+            <!-- Part rondelle_3__nominal_diam_default_4 -->
+            <!-- Part m3x14__configuration__18_4 -->
+            <!-- Part m2_5x10__configuration__10 -->
+            <!-- Part ecrou_3__nylstop_false -->
+            <!-- Part ecrou_2_5_6 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_8 -->
+            <!-- Part m3x14__configuration__18_5 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_9 -->
+            <!-- Part m2_5x6__configuration__6_4 -->
+            <!-- Part ecrou_3_nylstop__nylstop_true_2 -->
+            <!-- Part m2_5x6__configuration__6_5 -->
+            <!-- Part m3x10__configuration__14_4 -->
+            <!-- Part equerre_g -->
+            <!-- Part m3x40__configuration__400 -->
+            <!-- Part abs_spacer -->
+            <!-- Part m3x10__configuration__14_5 -->
+            <!-- Part rondelle_3__nominal_diam_default_5 -->
+            <!-- Part m3x40__configuration__400_2 -->
+            <!-- Part rondelle_3__nominal_diam_default_6 -->
+            <!-- Part rondelle_3__nominal_diam_default_7 -->
+            <!-- Part m3x14__configuration__18_6 -->
+            <!-- Part abs_spacer_2 -->
+            <!-- Part ecrou_2_5_7 -->
+            <!-- Part chestplate_cover -->
+            <!-- Part ecrou_3__nylstop_false_2 -->
+            <!-- Part torso_pos -->
+            <!-- Part m3x10__configuration__14_6 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_10 -->
+            <!-- Part x_plate_23_front_2 -->
+            <geom class="collision" pos="0.0603892 1.47174e-07 0.0680823" quat="0.5 -0.5 0.5 -0.5"
+                type="box" size="0.0725 0.057796 0.003" />
+            <geom type="mesh" class="visual" pos="0.0573892 1.47174e-07 0.068"
+                quat="3.42595e-16 -0.707107 0.707107 4.54123e-17" mesh="x_plate_23_front"
+                material="x_plate_23_front_material" />
+            <!-- Part m2_5x8__configuration_copy_of_6_11 -->
+            <!-- Part ecrou_3_nylstop__nylstop_true_3 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_12 -->
+            <!-- Part ecrou_3_nylstop__nylstop_true_4 -->
+            <!-- Part m3x40__configuration__400_3 -->
+            <!-- Part ecrou_3__nylstop_false_3 -->
+            <!-- Part ecrou_2_5_8 -->
+            <!-- Part abs_spacer_3 -->
+            <!-- Part ecrou_2_5_9 -->
+            <!-- Part button_holder -->
+            <!-- Part dxlcontroller_board -->
+            <!-- Part ecrou_2_5_10 -->
+            <!-- Part ecrou_2_5_11 -->
+            <!-- Part m3x40__configuration__400_4 -->
+            <!-- Part abs_spacer_4 -->
+            <!-- Part ecrou_3_nylstop__nylstop_true_5 -->
+            <!-- Part m2_5x10__configuration__10_2 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_13 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_14 -->
+            <!-- Part fr05_s101_2 -->
+            <geom type="mesh" class="visual" pos="0.0283892 0.0560001 0.14"
+                quat="0.707107 0.707107 2.88658e-15 8.17841e-15" mesh="fr05_s101"
+                material="fr05_s101_material" />
+            <!-- Part m2_5x6__configuration__6_6 -->
+            <!-- Part ecrou_4 -->
+            <!-- Part equerre_20x20_2 -->
+            <!-- Part m3x14__configuration__18_7 -->
+            <!-- Part handle -->
+            <geom type="mesh" class="visual" pos="-0.0476108 -0.0624999 0.14"
+                quat="0.707107 -2.72357e-15 3.33067e-15 0.707107" mesh="handle"
+                material="handle_material" />
+            <!-- Part m3x10__configuration__14_7 -->
+            <!-- Part ecrou_3_nylstop__nylstop_true_6 -->
+            <!-- Part rondelle_3__nominal_diam_default_8 -->
+            <!-- Part rondelle_3__nominal_diam_default_9 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_15 -->
+            <!-- Part nuc -->
+            <!-- Part rondelle_3__nominal_diam_default_10 -->
+            <!-- Part ecrou_2_5_12 -->
+            <!-- Part equerre_15x20_2 -->
+            <!-- Part m3x10__configuration__14_8 -->
+            <!-- Part ecrou_2_5_13 -->
+            <!-- Part chestplate_marker_2 -->
+            <geom type="mesh" class="visual" pos="0.0633892 -0.000376101 0.0718648"
+                quat="0.707107 -2.58634e-15 -2.9976e-15 -0.707107" mesh="chestplate_marker"
+                material="chestplate_marker_material" />
+            <!-- Part m5x14__configuration__14_2 -->
+            <!-- Part m2_5x10__configuration__10_3 -->
+            <!-- Part rondelle_3__nominal_diam_default_11 -->
+            <!-- Part m3x10__configuration__14_9 -->
+            <!-- Part ecrou_4_2 -->
+            <!-- Part rondelle_3__nominal_diam_default_12 -->
+            <!-- Part ecrou_2_5_14 -->
+            <!-- Part ecrou_3__nylstop_false_4 -->
+            <!-- Part m2_5x10__configuration__10_4 -->
+            <!-- Part hn05_n102 -->
+            <geom type="mesh" class="visual" pos="0.0283892 0.0770001 0.164"
+                quat="0.707107 -1.21108e-14 -0.707107 -1.05673e-14" mesh="hn05_n102"
+                material="hn05_n102_material" />
+            <!-- Part m3x8__configuration__12 -->
+            <!-- Part mx_64at_ar -->
+            <geom type="mesh" class="visual" pos="0.0283892 0.0560001 0.164"
+                quat="0.5 -0.5 -0.5 -0.5" mesh="mx_64at_ar" material="mx_64at_ar_material" />
+            <!-- Part goupille__316f24c225edb7f5f09a678f95c02e16 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_16 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_17 -->
+            <!-- Part flexible_part -->
+            <geom class="collision" pos="-0.0866108 0.0625001 -2.66454e-15" quat="0.5 -0.5 0.5 0.5"
+                type="cylinder" size="0.026 0.01" />
+            <geom type="mesh" class="visual" pos="-0.0626108 1.47174e-07 -0.068"
+                quat="0.707107 -3.56229e-15 1.88738e-15 0.707107" mesh="flexible_part"
+                material="flexible_part_material" />
+            <!-- Part base_2 -->
+            <geom type="mesh" class="visual" pos="-0.0626108 1.47174e-07 0.072"
+                quat="0.707107 -3.56229e-15 1.88738e-15 0.707107" mesh="base_2"
+                material="base_2_material" />
+            <!-- Part m2_5x8__configuration_copy_of_6_18 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_19 -->
+            <!-- Part flexible_part_2 -->
+            <geom class="collision" pos="0.0873892 0.0625001 0.14" quat="0.5 -0.5 -0.5 -0.5"
+                type="cylinder" size="0.026 0.01" />
+            <geom type="mesh" class="visual" pos="0.0633892 1.47174e-07 0.208"
+                quat="2.107e-16 0.707107 0.707107 3.18371e-16" mesh="flexible_part"
+                material="flexible_part_material" />
+            <!-- Part base_2_2 -->
+            <geom type="mesh" class="visual" pos="0.0633892 1.47174e-07 0.068"
+                quat="2.107e-16 0.707107 0.707107 3.18371e-16" mesh="base_2"
+                material="base_2_material" />
+            <!-- Part rondelle_3__nominal_diam_default_13 -->
+            <!-- Part m3x14__configuration__18_8 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_20 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_21 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_22 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_23 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_24 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_25 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_26 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_27 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_28 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_29 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_30 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_31 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_32 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_33 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_34 -->
+            <!-- Part hn05_n102_2 -->
+            <geom type="mesh" class="visual" pos="0.0333892 1.47174e-07 0.178"
+                quat="0.5 0.5 -0.5 -0.5" mesh="hn05_n102" material="hn05_n102_material" />
+            <!-- Part m3x8__configuration__12_2 -->
+            <!-- Part mx_64at_ar_2 -->
+            <geom type="mesh" class="visual" pos="0.0333892 1.47174e-07 0.157"
+                quat="0.707107 -4.36994e-16 3.05311e-16 -0.707107" mesh="mx_64at_ar"
+                material="mx_64at_ar_material" />
+            <!-- Part m2_5x8__configuration_copy_of_6_35 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_36 -->
+            <!-- Part flexible_part_3 -->
+            <geom class="collision" pos="0.0873892 -0.0624999 -1.66533e-16"
+                quat="0.5 -0.5 -0.5 -0.5" type="cylinder" size="0.026 0.01" />
+            <geom type="mesh" class="visual" pos="0.0633892 -0.125 0.068"
+                quat="2.107e-16 0.707107 0.707107 3.18371e-16" mesh="flexible_part"
+                material="flexible_part_material" />
+            <!-- Part base_3 -->
+            <geom type="mesh" class="visual" pos="0.0633892 1.47174e-07 0.068"
+                quat="2.107e-16 0.707107 0.707107 3.18371e-16" mesh="base_3"
+                material="base_3_material" />
+            <!-- Part m2_5x8__configuration_copy_of_6_37 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_38 -->
+            <!-- Part flexible_part_4 -->
+            <geom class="collision" pos="-0.0866108 -0.0624999 0.14" quat="0.5 -0.5 0.5 0.5"
+                type="cylinder" size="0.026 0.01" />
+            <geom type="mesh" class="visual" pos="-0.0626108 -0.125 0.072"
+                quat="0.707107 -3.57443e-15 1.88738e-15 0.707107" mesh="flexible_part"
+                material="flexible_part_material" />
+            <!-- Part base_3_2 -->
+            <geom type="mesh" class="visual" pos="-0.0626108 1.47174e-07 0.072"
+                quat="0.707107 -3.57443e-15 1.88738e-15 0.707107" mesh="base_3"
+                material="base_3_material" />
+            <!-- Part m2_5x16__configuration__16_2 -->
+            <!-- Part m2_5x16__configuration__16_3 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_39 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_40 -->
+            <!-- Part flexible_part_5 -->
+            <geom class="collision" pos="0.0873892 -0.0624999 0.14" quat="0.5 -0.5 -0.5 -0.5"
+                type="cylinder" size="0.026 0.01" />
+            <geom type="mesh" class="visual" pos="0.0633892 -0.125 0.208"
+                quat="2.107e-16 0.707107 0.707107 3.18371e-16" mesh="flexible_part"
+                material="flexible_part_material" />
+            <!-- Part base_4 -->
+            <geom type="mesh" class="visual" pos="0.0633892 1.47174e-07 0.068"
+                quat="2.107e-16 0.707107 0.707107 3.18371e-16" mesh="base_4"
+                material="base_4_material" />
+            <!-- Part m2_5x8__configuration_copy_of_6_41 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_42 -->
+            <!-- Part flexible_part_6 -->
+            <geom class="collision" pos="-0.0866108 -0.0624999 -1.65146e-15" quat="0.5 -0.5 0.5 0.5"
+                type="cylinder" size="0.026 0.01" />
+            <geom type="mesh" class="visual" pos="-0.0626108 -0.125 -0.068"
+                quat="0.707107 -3.56229e-15 1.88738e-15 0.707107" mesh="flexible_part"
+                material="flexible_part_material" />
+            <!-- Part base_4_2 -->
+            <geom type="mesh" class="visual" pos="-0.0626108 1.47174e-07 0.072"
+                quat="0.707107 -3.56229e-15 1.88738e-15 0.707107" mesh="base_4"
+                material="base_4_material" />
+            <!-- Part m2_5x8__configuration_copy_of_6_43 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_44 -->
+            <!-- Part flexible_part_7 -->
+            <geom class="collision" pos="0.0873892 0.0625001 -1.66533e-16" quat="0.5 -0.5 -0.5 -0.5"
+                type="cylinder" size="0.026 0.01" />
+            <geom type="mesh" class="visual" pos="0.0633892 1.47174e-07 0.068"
+                quat="2.107e-16 0.707107 0.707107 3.18371e-16" mesh="flexible_part"
+                material="flexible_part_material" />
+            <!-- Part base_1 -->
+            <geom type="mesh" class="visual" pos="0.0633892 1.47174e-07 0.068"
+                quat="2.107e-16 0.707107 0.707107 3.18371e-16" mesh="base_1"
+                material="base_1_material" />
+            <!-- Part goupille__316f24c225edb7f5f09a678f95c02e16_2 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_45 -->
+            <!-- Part m2_5x8__configuration_copy_of_6_46 -->
+            <!-- Part flexible_part_8 -->
+            <geom class="collision" pos="-0.0866108 0.0625001 0.14" quat="0.5 -0.5 0.5 0.5"
+                type="cylinder" size="0.026 0.01" />
+            <geom type="mesh" class="visual" pos="-0.0626108 1.47174e-07 0.072"
+                quat="0.707107 -3.56229e-15 1.88738e-15 0.707107" mesh="flexible_part"
+                material="flexible_part_material" />
+            <!-- Part base_1_2 -->
+            <geom type="mesh" class="visual" pos="-0.0626108 1.47174e-07 0.072"
+                quat="0.707107 -3.56229e-15 1.88738e-15 0.707107" mesh="base_1"
+                material="base_1_material" />
+            <!-- Part hn05_n102_3 -->
+            <geom type="mesh" class="visual" pos="0.0283892 -0.0769999 0.164"
+                quat="1.44629e-14 -0.707107 1.9762e-14 0.707107" mesh="hn05_n102"
+                material="hn05_n102_material" />
+            <!-- Part m3x8__configuration__12_3 -->
+            <!-- Part mx_64at_ar_3 -->
+            <geom type="mesh" class="visual" pos="0.0283892 -0.0559999 0.164"
+                quat="0.5 0.5 0.5 -0.5" mesh="mx_64at_ar" material="mx_64at_ar_material" />
+            <!-- Part hn05_n102_4 -->
+            <geom type="mesh" class="visual" pos="0.0033892 0.0464001 0.001"
+                quat="0.5 -0.5 0.5 -0.5" mesh="hn05_n102" material="hn05_n102_material" />
+            <!-- Part m3x8__configuration__12_4 -->
+            <!-- Part mx_64at_ar_4 -->
+            <geom type="mesh" class="visual" pos="0.0033892 0.0464001 0.022"
+                quat="1.31273e-14 0.707107 -0.707107 -3.83716e-15" mesh="mx_64at_ar"
+                material="mx_64at_ar_material" />
+            <!-- Part m3x10__configuration__14_10 -->
+            <!-- Part bague_serrage_3010 -->
+            <geom type="mesh" class="visual" pos="0.0033892 0.0464001 -1.87133e-16"
+                quat="1.37733e-14 0.707107 -0.707107 -4.39904e-15" mesh="bague_serrage_3010"
+                material="bague_serrage_3010_material" />
+            <!-- Part shoulder -->
+            <geom type="mesh" class="visual" pos="0.0033892 0.0464001 -0.00625"
+                quat="1.21382e-14 0.707107 -0.707107 -4.40023e-15" mesh="shoulder"
+                material="shoulder_material" />
+            <!-- Part flange -->
+            <!-- Part m4x14__length__14 -->
+            <!-- Part lien_moteur -->
+            <!-- Part re3010 -->
+            <!-- Part rondelle_4__nominal_diam__40 -->
+            <!-- Part goupille__f1e6b187d03e03e444626128b697a739 -->
+            <!-- Part goupille__f1e6b187d03e03e444626128b697a739_2 -->
+            <!-- Part hn05_n102_5 -->
+            <geom type="mesh" class="visual" pos="0.0033892 -0.0463999 0.001"
+                quat="0.5 -0.5 0.5 -0.5" mesh="hn05_n102" material="hn05_n102_material" />
+            <!-- Part m3x8__configuration__12_5 -->
+            <!-- Part mx_64at_ar_5 -->
+            <geom type="mesh" class="visual" pos="0.0033892 -0.0463999 0.022"
+                quat="1.99204e-14 0.707107 -0.707107 -1.08897e-14" mesh="mx_64at_ar"
+                material="mx_64at_ar_material" />
+            <!-- Part m3x10__configuration__14_11 -->
+            <!-- Part bague_serrage_3010_2 -->
+            <geom type="mesh" class="visual" pos="0.0033892 -0.0463999 -2.08167e-16"
+                quat="2.05664e-14 0.707107 -0.707107 -1.14516e-14" mesh="bague_serrage_3010"
+                material="bague_serrage_3010_material" />
+            <!-- Part shoulder_2 -->
+            <geom type="mesh" class="visual" pos="0.0033892 -0.0463999 -0.00625"
+                quat="1.89313e-14 0.707107 -0.707107 -1.14527e-14" mesh="shoulder"
+                material="shoulder_material" />
+            <!-- Part flange_2 -->
+            <!-- Part m4x14__length__14_2 -->
+            <!-- Part lien_moteur_2 -->
+            <!-- Part re3010_2 -->
+            <!-- Part rondelle_4__nominal_diam__40_2 -->
+            <!-- Part goupille__f1e6b187d03e03e444626128b697a739_3 -->
+            <!-- Part goupille__f1e6b187d03e03e444626128b697a739_4 -->
+            <!-- Part rondelle_4__nominal_diam__40_3 -->
+            <!-- Part rondelle_4__nominal_diam__40_4 -->
+            <!-- Part m4x14__length__14_3 -->
+            <!-- Part m4x14__length__14_4 -->
+            <!-- Part m4x14__length__14_5 -->
+            <!-- Part rondelle_4__nominal_diam__40_5 -->
+            <!-- Part m3x10__configuration__14_12 -->
+            <!-- Part m3x10__configuration__14_13 -->
+            <!-- Part m3x10__configuration__14_14 -->
+            <!-- Part m3x10__configuration__14_15 -->
+            <!-- Part m3x10__configuration__14_16 -->
+            <!-- Part rondelle_4__nominal_diam__40_6 -->
+            <!-- Part rondelle_4__nominal_diam__40_7 -->
+            <!-- Part m4x14__length__14_6 -->
+            <!-- Part m4x14__length__14_7 -->
+            <!-- Part m4x14__length__14_8 -->
+            <!-- Part rondelle_4__nominal_diam__40_8 -->
+            <!-- Part m3x10__configuration__14_17 -->
+            <!-- Part m3x10__configuration__14_18 -->
+            <!-- Part m3x10__configuration__14_19 -->
+            <!-- Part m3x10__configuration__14_20 -->
+            <!-- Part m3x10__configuration__14_21 -->
+            <!-- Frame head_base -->
+            <site group="0" name="head_base" pos="0.0333892 1.47174e-07 0.183"
+                quat="1 -6.12323e-17 -0 -5.04871e-29" />
+            <!-- Frame trunk -->
+            <site group="0" name="trunk" pos="0.0608892 1.47174e-07 0.0025"
+                quat="1 0 2.22045e-16 7.08396e-18" />
+            <!-- Link u_neck -->
+            <body name="u_neck" pos="0.0333892 1.47174e-07 0.1805"
+                quat="0.707107 5.9492e-16 1.38778e-15 -0.707107">
+                <!-- Joint from torso_2023 to u_neck -->
+                <joint name="head_yaw" type="hinge" range="-2.0943951023931953 2.0943951023931953"
+                    class="mx64" />
+                <inertial pos="1.08118e-16 6.61862e-17 0.0206334" mass="0.0544799"
+                    fullinertia="3.05787e-05 5.16952e-05 2.98525e-05 -1.35944e-11 -7.83505e-21 -4.57265e-20" />
+                <!-- Part m2_5x5__configuration_size -->
+                <!-- Part m2_5x8__configuration_copy_of_6_47 -->
+                <!-- Part m2_5x5__configuration_size_2 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_48 -->
+                <!-- Part u_base_64 -->
+                <geom class="collision" pos="-1.31466e-35 -3.01158e-35 0.003125" quat="0 1 0 0"
+                    type="box" size="0.0245 0.015 0.003125" />
+                <geom type="mesh" class="visual" pos="0 0 0" quat="1 0 -1.11022e-16 8.32667e-17"
+                    mesh="u_base_64" material="u_base_64_material" />
+                <!-- Part m2_5x6__configuration__6_7 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_49 -->
+                <!-- Part m2_5x5__configuration_size_3 -->
+                <!-- Part m2_5x5__configuration_size_4 -->
+                <!-- Part m2_5x5__configuration_size_5 -->
+                <!-- Part m2_5x5__configuration_size_6 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_50 -->
+                <!-- Part m2_5x5__configuration_size_7 -->
+                <!-- Part m2_5x6__configuration__6_8 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_51 -->
+                <!-- Part m2_5x6__configuration__6_9 -->
+                <!-- Part m2_5x6__configuration__6_10 -->
+                <!-- Part m2_5x5__configuration_size_8 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_52 -->
+                <!-- Part m2_5x5__configuration_size_9 -->
+                <!-- Part u_side_neck -->
+                <geom class="collision" pos="-0.025 6.77525e-16 0.032901" quat="0.5 0.5 0.5 0.5"
+                    type="box" size="0.015 0.032901 0.0015" />
+                <geom type="mesh" class="visual" pos="-0.0265 7.21645e-16 0.058302"
+                    quat="0.5 0.5 0.5 0.5" mesh="u_side_neck" material="u_side_neck_material" />
+                <!-- Part m2_5x5__configuration_size_10 -->
+                <!-- Part m2_5x5__configuration_size_11 -->
+                <!-- Part m2_5x6__configuration__6_11 -->
+                <!-- Part m2_5x6__configuration__6_12 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_53 -->
+                <!-- Part m2_5x6__configuration__6_13 -->
+                <!-- Part m2_5x6__configuration__6_14 -->
+                <!-- Part m2_5x5__configuration_size_12 -->
+                <!-- Part u_side_neck_2 -->
+                <geom class="collision" pos="0.025 -4.50934e-16 0.032901" quat="0.5 0.5 -0.5 -0.5"
+                    type="box" size="0.015 0.032901 0.0015" />
+                <geom type="mesh" class="visual" pos="0.0265 -4.16334e-16 0.058302"
+                    quat="0.5 0.5 -0.5 -0.5" mesh="u_side_neck" material="u_side_neck_material" />
+                <!-- Part m2_5x8__configuration_copy_of_6_54 -->
+                <!-- Link head_2023__field_of_view_false -->
+                <body name="head_2023__field_of_view_false" pos="-0.0235 6.45317e-16 0.058302"
+                    quat="0.5 0.5 -0.5 -0.5">
+                    <!-- Joint from u_neck to head_2023__field_of_view_false -->
+                    <joint name="head_pitch" type="hinge"
+                        range="-0.7853981633974483 1.5707963267948966" class="mx64" />
+                    <inertial pos="-0.000139837 0.00397747 -0.0233757" mass="0.257265"
+                        fullinertia="0.000251684 0.000105801 0.000245995 5.01912e-06 6.27582e-07 3.64788e-06" />
+                    <!-- Part m2_5x8__configuration_copy_of_6_55 -->
+                    <!-- Part head_plate_d_2023 -->
+                    <geom class="collision" pos="-0.0238 0.0365 -0.044"
+                        quat="0 -6.93889e-18 -1 1.249e-16" type="cylinder" size="0.0235 0.0015" />
+                    <geom class="collision" pos="0.01 0.0365 -0.044"
+                        quat="0 -6.93889e-18 -1 1.249e-16" type="box" size="0.0308 0.0235 0.0015" />
+                    <geom type="mesh" class="visual" pos="-5.6205e-16 0.013 -0.0455"
+                        quat="0 -6.93889e-18 -1 1.249e-16" mesh="head_plate_d_2023"
+                        material="head_plate_d_2023_material" />
+                    <!-- Part m2_5x8__configuration_copy_of_6_56 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_57 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_58 -->
+                    <!-- Part lens -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_59 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_60 -->
+                    <!-- Part ptgrey_fix -->
+                    <!-- Part ecrou_2_5_15 -->
+                    <!-- Part ptgrey_camera -->
+                    <geom type="mesh" class="visual" pos="-0.00496822 0.0335 -0.0235"
+                        quat="0.5 -0.5 -0.5 -0.5" mesh="ptgrey_camera"
+                        material="ptgrey_camera_material" />
+                    <!-- Part m2_5x8__configuration_copy_of_6_61 -->
+                    <!-- Part head_plate_g_2023 -->
+                    <geom class="collision" pos="-0.0238 0.0365 -0.003" quat="0 6.93889e-18 -1 0"
+                        type="cylinder" size="0.0235 0.0015" />
+                    <geom class="collision" pos="0.01 0.0365 -0.003" quat="0 6.93889e-18 -1 0"
+                        type="box" size="0.0308 0.0235 0.0015" />
+                    <geom type="mesh" class="visual" pos="-1.05541e-14 0.013 -0.0015"
+                        quat="0 6.93889e-18 -1 0" mesh="head_plate_g_2023"
+                        material="head_plate_g_2023_material" />
+                    <!-- Part m2_5x8__configuration_copy_of_6_62 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_63 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_64 -->
+                    <!-- Part ecrou_2_5_16 -->
+                    <!-- Part ecrou_2_5_17 -->
+                    <!-- Part rx64_cap -->
+                    <!-- Part m3x6__configuration__8 -->
+                    <!-- Part hn05_n102_6 -->
+                    <geom type="mesh" class="visual" pos="0 2.77556e-17 -0.0025"
+                        quat="0.69352 0.69352 -0.13795 -0.13795" mesh="hn05_n102"
+                        material="hn05_n102_material" />
+                    <!-- Part m3x8__configuration__12_6 -->
+                    <!-- Part hn05_i101 -->
+                    <geom type="mesh" class="visual" pos="6.93889e-18 0 -0.04314"
+                        quat="6.26259e-17 -0.265013 -0.964245 4.50643e-17" mesh="hn05_i101"
+                        material="hn05_i101_material" />
+                    <!-- Part mf128zz -->
+                    <!-- Part mx_64at_ar_6 -->
+                    <geom type="mesh" class="visual" pos="0 0 -0.0235"
+                        quat="1 -0 1.63064e-16 -6.93889e-18" mesh="mx_64at_ar"
+                        material="mx_64at_ar_material" />
+                    <!-- Frame camera -->
+                    <site group="0" name="camera" pos="-0.024933 0.0335 -0.0235"
+                        quat="7.00303e-15 -0.707107 -2.22045e-16 0.707107" />
+                </body>
+            </body>
+            <!-- Link u_shoulder_2023 -->
+            <body name="u_shoulder_2023" pos="0.0283892 0.0795001 0.164"
+                quat="0.707107 -0.707107 -1.76525e-14 -1.38732e-15">
+                <!-- Joint from torso_2023 to u_shoulder_2023 -->
+                <joint name="left_shoulder_pitch" type="hinge"
+                    range="-2.181661564992912 2.181661564992912" class="mx64" />
+                <inertial pos="-1.40922e-15 0.00364642 0.0214003" mass="0.0751043"
+                    fullinertia="3.35766e-05 5.6855e-05 4.55796e-05 4.82897e-19 1.25795e-18 -1.64412e-06" />
+                <!-- Part ecrou_2_5_18 -->
+                <!-- Part u_side_shoulder_mir -->
+                <geom type="mesh" class="visual" pos="-0.073 1.11022e-16 0.004"
+                    quat="1 3.167e-14 1.39888e-14 -2.04143e-14" mesh="u_side_shoulder_mir"
+                    material="u_side_shoulder_mir_material" />
+                <!-- Part u_side_shoulder -->
+                <geom type="mesh" class="visual" pos="2.91434e-16 2.77556e-17 0.004"
+                    quat="1 3.11701e-14 1.46549e-14 -2.04696e-14" mesh="u_side_shoulder"
+                    material="u_side_shoulder_material" />
+                <!-- Part m2_5x10__configuration__10_5 -->
+                <!-- Part bearing -->
+                <!-- Part shoulder_protection__imp_offset_3_0e_4_meter -->
+                <!-- Part ecrou_2_5_19 -->
+                <!-- Part m2_5x6__configuration__6_15 -->
+                <!-- Part m2_5x10__configuration__10_6 -->
+                <!-- Part m2_5x5__configuration_size_13 -->
+                <!-- Part ecrou_2_5_20 -->
+                <!-- Part m2_5x10__configuration__10_7 -->
+                <!-- Part u_base_64_2 -->
+                <geom class="collision" pos="3.80491e-16 -1.69946e-16 0.007125"
+                    quat="3.16511e-14 -1 2.06779e-14 1.42547e-14" type="box"
+                    size="0.0245 0.015 0.003125" />
+                <geom type="mesh" class="visual" pos="2.91434e-16 2.77556e-17 0.004"
+                    quat="1 3.16511e-14 1.40998e-14 -2.0678e-14" mesh="u_base_64"
+                    material="u_base_64_material" />
+                <!-- Part m2_5x10__configuration__10_8 -->
+                <!-- Part ecrou_2_5_21 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_65 -->
+                <!-- Part m2_5x5__configuration_size_14 -->
+                <!-- Part m2_5x5__configuration_size_15 -->
+                <!-- Part m2_5x5__configuration_size_16 -->
+                <!-- Part m2_5x5__configuration_size_17 -->
+                <!-- Part m2_5x5__configuration_size_18 -->
+                <!-- Part m2_5x5__configuration_size_19 -->
+                <!-- Part m2_5x5__configuration_size_20 -->
+                <!-- Part m2_5x5__configuration_size_21 -->
+                <!-- Part m2_5x5__configuration_size_22 -->
+                <!-- Part m2_5x6__configuration__6_16 -->
+                <!-- Part m2_5x6__configuration__6_17 -->
+                <!-- Part m2_5x6__configuration__6_18 -->
+                <!-- Part m2_5x6__configuration__6_19 -->
+                <!-- Part m2_5x6__configuration__6_20 -->
+                <!-- Part m2_5x6__configuration__6_21 -->
+                <!-- Part m2_5x6__configuration__6_22 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_66 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_67 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_68 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_69 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_70 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_71 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_72 -->
+                <!-- Link left_humerus_v2 -->
+                <body name="left_humerus_v2" pos="0.0235 0.03 0.03"
+                    quat="0.092296 -0.701057 0.092296 -0.701057">
+                    <!-- Joint from u_shoulder_2023 to left_humerus_v2 -->
+                    <joint name="left_shoulder_roll" type="hinge"
+                        range="-0.2617993877991494 1.3089969389957472" class="mx64" />
+                    <inertial pos="0.000328884 -0.0525856 -0.0274205" mass="0.252204"
+                        fullinertia="0.000740403 9.0229e-05 0.000725604 5.43942e-06 9.57405e-07 -6.1364e-05" />
+                    <!-- Part fr05_h101 -->
+                    <geom type="mesh" class="visual" pos="1.9984e-14 -0.139 -0.003125"
+                        quat="0.707107 -0.707107 -0 7.44893e-18" mesh="fr05_h101"
+                        material="fr05_h101_material" />
+                    <!-- Part m2_5x8__configuration_copy_of_6_73 -->
+                    <!-- Part elbow_protection -->
+                    <!-- Part ecrou_2_5_22 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_74 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_75 -->
+                    <!-- Part m2_5x4__configuration_default -->
+                    <!-- Part ecrou_2_5_23 -->
+                    <!-- Part m2_5x6__configuration__6_23 -->
+                    <!-- Part humerus_plate -->
+                    <geom class="collision" pos="9.97639e-15 -0.1015 -0.040625"
+                        quat="2.16489e-17 -0.707107 0.707107 2.16489e-17" type="box"
+                        size="0.0525 0.015 0.0015" />
+                    <geom type="mesh" class="visual" pos="0.015 -0.154 -0.042125"
+                        quat="0.707107 0 -0.707107 -2.77556e-17" mesh="humerus_plate"
+                        material="humerus_plate_material" />
+                    <!-- Part m2_5x6__configuration__6_24 -->
+                    <!-- Part ecrou_2_5_24 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_76 -->
+                    <!-- Part m2_5x4__configuration_default_2 -->
+                    <!-- Part ecrou_2_5_25 -->
+                    <!-- Part ecrou_2_5_26 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_77 -->
+                    <!-- Part ecrou_2_5_27 -->
+                    <!-- Part m2_5x5__configuration_size_23 -->
+                    <!-- Part m2_5x4__configuration_default_3 -->
+                    <!-- Part ecrou_2_5_28 -->
+                    <!-- Part m2_5x4__configuration_default_4 -->
+                    <!-- Part ecrou_2_5_29 -->
+                    <!-- Part m2_5x5__configuration_size_24 -->
+                    <!-- Part ecrou_2_5_30 -->
+                    <!-- Part ecrou_2_5_31 -->
+                    <!-- Part m2_5x4__configuration_default_5 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_78 -->
+                    <!-- Part m2_5x5__configuration_size_25 -->
+                    <!-- Part fr05_s101_3 -->
+                    <geom type="mesh" class="visual" pos="2.77556e-17 -0.052 -0.0235"
+                        quat="1 0 1.73324e-20 1.66589e-26" mesh="fr05_s101"
+                        material="fr05_s101_material" />
+                    <!-- Part m2_5x8__configuration_copy_of_6_79 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_80 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_81 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_82 -->
+                    <!-- Part m2_5x4__configuration_default_6 -->
+                    <!-- Part m2_5x5__configuration_size_26 -->
+                    <!-- Part rx64_cap_2 -->
+                    <!-- Part m3x6__configuration__8_2 -->
+                    <!-- Part hn05_n102_7 -->
+                    <geom type="mesh" class="visual" pos="2.77556e-17 1.38778e-17 -0.0025"
+                        quat="0.707107 0.707107 0 7.44893e-18" mesh="hn05_n102"
+                        material="hn05_n102_material" />
+                    <!-- Part m3x8__configuration__12_7 -->
+                    <!-- Part hn05_i101_2 -->
+                    <geom type="mesh" class="visual" pos="2.77556e-17 0 -0.04314"
+                        quat="3.49296e-31 -0.768097 0.640334 -4.87427e-30" mesh="hn05_i101"
+                        material="hn05_i101_material" />
+                    <!-- Part mf128zz_2 -->
+                    <!-- Part mx_64at_ar_7 -->
+                    <geom type="mesh" class="visual" pos="0 1.38778e-17 -0.0235"
+                        quat="1 0 1.73324e-20 1.66589e-26" mesh="mx_64at_ar"
+                        material="mx_64at_ar_material" />
+                    <!-- Link radius_v2 -->
+                    <body name="radius_v2" pos="0.0235 -0.139 -0.003125"
+                        quat="0.707107 1.94183e-16 0.707107 -5.55112e-17">
+                        <!-- Joint from left_humerus_v2 to radius_v2 -->
+                        <joint name="left_elbow" type="hinge"
+                            range="-2.792526803190927 0.2617993877991494" class="mx64" />
+                        <inertial pos="7.98171e-05 -0.0556905 -0.0234333" mass="0.256846"
+                            fullinertia="0.000937241 0.000130597 0.000947054 -7.92686e-07 6.13956e-07 1.97866e-06" />
+                        <!-- Part ecrou_2_5_32 -->
+                        <!-- Part entretoise_m_f_20xm3__length__20 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_83 -->
+                        <!-- Part m3x8__configuration__12_8 -->
+                        <!-- Part hand_2023 -->
+                        <geom class="collision" pos="3.33067e-19 -0.1496 -0.005"
+                            quat="0.707107 -2.84225e-16 -2.22045e-16 -0.707107" type="cylinder"
+                            size="0.04 0.0015" />
+                        <geom class="collision" pos="-1.84573e-17 -0.0649756 -0.005"
+                            quat="0.707107 -2.84225e-16 -2.22045e-16 -0.707107" type="box"
+                            size="0.0497756 0.0206 0.0015" />
+                        <geom type="mesh" class="visual" pos="0 -0.1496 -0.0065"
+                            quat="0.707107 -2.84225e-16 -2.22045e-16 -0.707107" mesh="hand_2023"
+                            material="hand_2023_material" />
+                        <!-- Part ecrou_2_5_33 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_84 -->
+                        <!-- Part entretoise_f_f_14xm3__length__14 -->
+                        <!-- Part ecrou_2_5_34 -->
+                        <!-- Part entretoise_f_f_14xm3__length__14_2 -->
+                        <!-- Part entretoise_m_f_20xm3__length__20_2 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_85 -->
+                        <!-- Part m3x8__configuration__12_9 -->
+                        <!-- Part entretoise_m_f_20xm3__length__20_3 -->
+                        <!-- Part m3x8__configuration__12_10 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_86 -->
+                        <!-- Part entretoise_m_f_20xm3__length__20_4 -->
+                        <!-- Part hand_2023_2 -->
+                        <geom class="collision" pos="1.37945e-17 -0.1496 -0.042"
+                            quat="0.707107 4.38497e-17 -5.82867e-16 -0.707107" type="cylinder"
+                            size="0.04 0.0015" />
+                        <geom class="collision" pos="-2.98273e-19 -0.0649756 -0.042"
+                            quat="0.707107 4.38497e-17 -5.82867e-16 -0.707107" type="box"
+                            size="0.0497756 0.0206 0.0015" />
+                        <geom type="mesh" class="visual" pos="1.38778e-17 -0.1496 -0.0435"
+                            quat="0.707107 4.38497e-17 -5.82867e-16 -0.707107" mesh="hand_2023"
+                            material="hand_2023_material" />
+                        <!-- Part m3x8__configuration__12_11 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_87 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_88 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_89 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_90 -->
+                        <!-- Part m3x8__configuration__12_12 -->
+                        <!-- Part m3x8__configuration__12_13 -->
+                        <!-- Part entretoise_f_f_14xm3__length__14_3 -->
+                        <!-- Part ecrou_2_5_35 -->
+                        <!-- Part entretoise_f_f_14xm3__length__14_4 -->
+                        <!-- Part m3x8__configuration__12_14 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_91 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_92 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_93 -->
+                        <!-- Part ecrou_2_5_36 -->
+                        <!-- Part m3x8__configuration__12_15 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_94 -->
+                        <!-- Part ecrou_2_5_37 -->
+                        <!-- Part rx64_cap_3 -->
+                        <!-- Part m3x6__configuration__8_3 -->
+                        <!-- Part hn05_n102_8 -->
+                        <geom type="mesh" class="visual" pos="0 0 -0.0025"
+                            quat="0.707107 0.707107 -0 -1.29215e-30" mesh="hn05_n102"
+                            material="hn05_n102_material" />
+                        <!-- Part m3x8__configuration__12_16 -->
+                        <!-- Part hn05_i101_3 -->
+                        <geom type="mesh" class="visual" pos="-6.93889e-18 2.08167e-17 -0.04314"
+                            quat="2.55594e-15 0.265343 -0.964154 3.31539e-15" mesh="hn05_i101"
+                            material="hn05_i101_material" />
+                        <!-- Part mf128zz_3 -->
+                        <!-- Part mx_64at_ar_8 -->
+                        <geom type="mesh" class="visual" pos="0 6.93889e-18 -0.0235"
+                            quat="1 -7.55768e-17 -3.33067e-16 3.33067e-16" mesh="mx_64at_ar"
+                            material="mx_64at_ar_material" />
+                    </body>
+                </body>
+            </body>
+            <!-- Link u_shoulder_2023_2 -->
+            <body name="u_shoulder_2023_2" pos="0.0283892 -0.0794999 0.164"
+                quat="1.20182e-14 -2.23063e-14 0.707107 0.707107">
+                <!-- Joint from torso_2023 to u_shoulder_2023_2 -->
+                <joint name="right_shoulder_pitch" type="hinge"
+                    range="-2.181661564992912 2.181661564992912" class="mx64" />
+                <inertial pos="3.90103e-15 -0.00364642 -0.0214003" mass="0.0751043"
+                    fullinertia="3.35766e-05 5.6855e-05 4.55796e-05 -4.51309e-19 1.84471e-18 -1.64412e-06" />
+                <!-- Part ecrou_2_5_38 -->
+                <!-- Part u_side_shoulder_mir_2 -->
+                <geom type="mesh" class="visual" pos="-0.073 -4.66294e-15 -0.004"
+                    quat="2.08224e-14 1 1.96319e-14 -1.25898e-15" mesh="u_side_shoulder_mir"
+                    material="u_side_shoulder_mir_material" />
+                <!-- Part u_side_shoulder_2 -->
+                <geom type="mesh" class="visual" pos="6.59195e-17 1.66533e-16 -0.004"
+                    quat="2.03797e-14 1 1.96457e-14 -1.32286e-15" mesh="u_side_shoulder"
+                    material="u_side_shoulder_material" />
+                <!-- Part m2_5x10__configuration__10_9 -->
+                <!-- Part bearing_2 -->
+                <!-- Part shoulder_protection__imp_offset_3_0e_4_meter_2 -->
+                <!-- Part ecrou_2_5_39 -->
+                <!-- Part m2_5x6__configuration__6_25 -->
+                <!-- Part m2_5x10__configuration__10_10 -->
+                <!-- Part m2_5x5__configuration_size_27 -->
+                <!-- Part ecrou_2_5_40 -->
+                <!-- Part m2_5x10__configuration__10_11 -->
+                <!-- Part u_base_64_3 -->
+                <geom class="collision" pos="5.81619e-17 3.80699e-17 -0.007125"
+                    quat="1 -2.05388e-14 1.11022e-15 1.96717e-14" type="box"
+                    size="0.0245 0.015 0.003125" />
+                <geom type="mesh" class="visual" pos="6.59195e-17 1.66533e-16 -0.004"
+                    quat="2.05388e-14 1 1.96718e-14 -1.24743e-15" mesh="u_base_64"
+                    material="u_base_64_material" />
+                <!-- Part m2_5x10__configuration__10_12 -->
+                <!-- Part ecrou_2_5_41 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_95 -->
+                <!-- Part m2_5x5__configuration_size_28 -->
+                <!-- Part m2_5x5__configuration_size_29 -->
+                <!-- Part m2_5x5__configuration_size_30 -->
+                <!-- Part m2_5x5__configuration_size_31 -->
+                <!-- Part m2_5x5__configuration_size_32 -->
+                <!-- Part m2_5x5__configuration_size_33 -->
+                <!-- Part m2_5x5__configuration_size_34 -->
+                <!-- Part m2_5x5__configuration_size_35 -->
+                <!-- Part m2_5x5__configuration_size_36 -->
+                <!-- Part m2_5x6__configuration__6_26 -->
+                <!-- Part m2_5x6__configuration__6_27 -->
+                <!-- Part m2_5x6__configuration__6_28 -->
+                <!-- Part m2_5x6__configuration__6_29 -->
+                <!-- Part m2_5x6__configuration__6_30 -->
+                <!-- Part m2_5x6__configuration__6_31 -->
+                <!-- Part m2_5x6__configuration__6_32 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_96 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_97 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_98 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_99 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_100 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_101 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_102 -->
+                <!-- Link right_humerus_v2 -->
+                <body name="right_humerus_v2" pos="-0.0235 -0.03 -0.03"
+                    quat="0.701057 0.092296 -0.701057 -0.092296">
+                    <!-- Joint from u_shoulder_2023_2 to right_humerus_v2 -->
+                    <joint name="right_shoulder_roll" type="hinge"
+                        range="-1.3089969389957472 0.2617993877991494" class="mx64" />
+                    <inertial pos="-0.000166311 -0.0525856 -0.0274058" mass="0.252204"
+                        fullinertia="0.000740432 9.02784e-05 0.000725625 -6.89747e-06 1.06408e-07 -6.13911e-05" />
+                    <!-- Part fr05_h101_2 -->
+                    <geom type="mesh" class="visual" pos="-1.00753e-14 -0.139 -0.003125"
+                        quat="2.05391e-15 -2.0358e-15 0.707107 -0.707107" mesh="fr05_h101"
+                        material="fr05_h101_material" />
+                    <!-- Part m2_5x8__configuration_copy_of_6_103 -->
+                    <!-- Part humerus_plate_2 -->
+                    <geom class="collision" pos="-2.00846e-14 -0.1015 -0.040625"
+                        quat="9.20407e-16 0.707107 -0.707107 9.20407e-16" type="box"
+                        size="0.0525 0.015 0.0015" />
+                    <geom type="mesh" class="visual" pos="0.015 -0.154 -0.042125"
+                        quat="0.707107 1.1202e-15 -0.707107 2.9976e-15" mesh="humerus_plate"
+                        material="humerus_plate_material" />
+                    <!-- Part ecrou_2_5_42 -->
+                    <!-- Part m2_5x4__configuration_default_7 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_104 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_105 -->
+                    <!-- Part m2_5x5__configuration_size_37 -->
+                    <!-- Part ecrou_2_5_43 -->
+                    <!-- Part m2_5x6__configuration__6_33 -->
+                    <!-- Part m2_5x6__configuration__6_34 -->
+                    <!-- Part ecrou_2_5_44 -->
+                    <!-- Part m2_5x4__configuration_default_8 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_106 -->
+                    <!-- Part elbow_protection_2 -->
+                    <!-- Part m2_5x4__configuration_default_9 -->
+                    <!-- Part ecrou_2_5_45 -->
+                    <!-- Part m2_5x5__configuration_size_38 -->
+                    <!-- Part ecrou_2_5_46 -->
+                    <!-- Part m2_5x4__configuration_default_10 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_107 -->
+                    <!-- Part ecrou_2_5_47 -->
+                    <!-- Part ecrou_2_5_48 -->
+                    <!-- Part m2_5x5__configuration_size_39 -->
+                    <!-- Part ecrou_2_5_49 -->
+                    <!-- Part m2_5x5__configuration_size_40 -->
+                    <!-- Part ecrou_2_5_50 -->
+                    <!-- Part ecrou_2_5_51 -->
+                    <!-- Part m2_5x4__configuration_default_11 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_108 -->
+                    <!-- Part m2_5x4__configuration_default_12 -->
+                    <!-- Part fr05_s101_4 -->
+                    <geom type="mesh" class="visual" pos="-1.00198e-14 -0.052 -0.0235"
+                        quat="0 -0 1 0" mesh="fr05_s101" material="fr05_s101_material" />
+                    <!-- Part m2_5x8__configuration_copy_of_6_109 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_110 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_111 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_112 -->
+                    <!-- Part rx64_cap_4 -->
+                    <!-- Part m3x6__configuration__8_4 -->
+                    <!-- Part hn05_n102_9 -->
+                    <geom type="mesh" class="visual" pos="0 -1.38778e-17 -0.0025"
+                        quat="0.707107 0.707107 -0 -2.09449e-17" mesh="hn05_n102"
+                        material="hn05_n102_material" />
+                    <!-- Part m3x8__configuration__12_17 -->
+                    <!-- Part hn05_i101_4 -->
+                    <geom type="mesh" class="visual" pos="0 0 -0.04314"
+                        quat="1.85519e-16 0.768097 -0.640334 -1.2605e-17" mesh="hn05_i101"
+                        material="hn05_i101_material" />
+                    <!-- Part mf128zz_4 -->
+                    <!-- Part mx_64at_ar_9 -->
+                    <geom type="mesh" class="visual" pos="0 -1.38778e-17 -0.0235"
+                        quat="1 -0 3.02156e-20 1.11022e-16" mesh="mx_64at_ar"
+                        material="mx_64at_ar_material" />
+                    <!-- Link radius_v2_2 -->
+                    <body name="radius_v2_2" pos="-0.0235 -0.139 -0.003125"
+                        quat="7.92467e-16 0.707107 6.55032e-15 0.707107">
+                        <!-- Joint from right_humerus_v2 to radius_v2_2 -->
+                        <joint name="right_elbow" type="hinge"
+                            range="-2.792526803190927 0.2617993877991494" class="mx64" />
+                        <inertial pos="7.98171e-05 0.0556905 0.0234333" mass="0.256846"
+                            fullinertia="0.000937241 0.000130597 0.000947054 7.92686e-07 -6.13956e-07 1.97866e-06" />
+                        <!-- Part ecrou_2_5_52 -->
+                        <!-- Part entretoise_m_f_20xm3__length__20_5 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_113 -->
+                        <!-- Part m3x8__configuration__12_18 -->
+                        <!-- Part hand_2023_3 -->
+                        <geom class="collision" pos="-4.55305e-15 0.1496 0.005"
+                            quat="1.36523e-15 -0.707107 -0.707107 -3.13813e-15" type="cylinder"
+                            size="0.04 0.0015" />
+                        <geom class="collision" pos="-2.1009e-15 0.0649756 0.005"
+                            quat="1.36523e-15 -0.707107 -0.707107 -3.13813e-15" type="box"
+                            size="0.0497756 0.0206 0.0015" />
+                        <geom type="mesh" class="visual" pos="-4.55885e-15 0.1496 0.0065"
+                            quat="1.36523e-15 -0.707107 -0.707107 -3.13813e-15" mesh="hand_2023"
+                            material="hand_2023_material" />
+                        <!-- Part ecrou_2_5_53 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_114 -->
+                        <!-- Part entretoise_f_f_14xm3__length__14_5 -->
+                        <!-- Part ecrou_2_5_54 -->
+                        <!-- Part entretoise_f_f_14xm3__length__14_6 -->
+                        <!-- Part entretoise_m_f_20xm3__length__20_6 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_115 -->
+                        <!-- Part m3x8__configuration__12_19 -->
+                        <!-- Part entretoise_m_f_20xm3__length__20_7 -->
+                        <!-- Part m3x8__configuration__12_20 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_116 -->
+                        <!-- Part entretoise_m_f_20xm3__length__20_8 -->
+                        <!-- Part hand_2023_4 -->
+                        <geom class="collision" pos="-3.9563e-15 0.1496 0.042"
+                            quat="2.15699e-15 -0.707107 -0.707107 -3.9878e-15" type="cylinder"
+                            size="0.04 0.0015" />
+                        <geom class="collision" pos="-1.50415e-15 0.0649756 0.042"
+                            quat="2.15699e-15 -0.707107 -0.707107 -3.9878e-15" type="box"
+                            size="0.0497756 0.0206 0.0015" />
+                        <geom type="mesh" class="visual" pos="-3.96211e-15 0.1496 0.0435"
+                            quat="2.15699e-15 -0.707107 -0.707107 -3.9878e-15" mesh="hand_2023"
+                            material="hand_2023_material" />
+                        <!-- Part m3x8__configuration__12_21 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_117 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_118 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_119 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_120 -->
+                        <!-- Part m3x8__configuration__12_22 -->
+                        <!-- Part m3x8__configuration__12_23 -->
+                        <!-- Part entretoise_f_f_14xm3__length__14_7 -->
+                        <!-- Part ecrou_2_5_55 -->
+                        <!-- Part entretoise_f_f_14xm3__length__14_8 -->
+                        <!-- Part m3x8__configuration__12_24 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_121 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_122 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_123 -->
+                        <!-- Part ecrou_2_5_56 -->
+                        <!-- Part m3x8__configuration__12_25 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_124 -->
+                        <!-- Part ecrou_2_5_57 -->
+                        <!-- Part rx64_cap_5 -->
+                        <!-- Part m3x6__configuration__8_5 -->
+                        <!-- Part hn05_n102_10 -->
+                        <geom type="mesh" class="visual" pos="-6.93889e-18 0 0.0025"
+                            quat="0.707107 -0.707107 0 -8.98892e-32" mesh="hn05_n102"
+                            material="hn05_n102_material" />
+                        <!-- Part m3x8__configuration__12_26 -->
+                        <!-- Part hn05_i101_5 -->
+                        <geom type="mesh" class="visual" pos="-1.8735e-16 6.93889e-18 0.04314"
+                            quat="0.518086 1.3703e-15 -2.13718e-15 0.855328" mesh="hn05_i101"
+                            material="hn05_i101_material" />
+                        <!-- Part mf128zz_5 -->
+                        <!-- Part mx_64at_ar_10 -->
+                        <geom type="mesh" class="visual" pos="-1.04083e-16 -6.93889e-18 0.0235"
+                            quat="2.39703e-15 -1 -7.25688e-15 -9.7429e-16" mesh="mx_64at_ar"
+                            material="mx_64at_ar_material" />
+                    </body>
+                </body>
+            </body>
+            <!-- Link u_block_2023 -->
+            <body name="u_block_2023" pos="0.0033892 0.0464001 -0.021"
+                quat="3.31957e-14 7.63144e-15 -2.38698e-14 -1">
+                <!-- Joint from torso_2023 to u_block_2023 -->
+                <joint name="left_hip_yaw" type="hinge"
+                    range="-1.0471975511965976 1.0471975511965976" class="mx64" />
+                <inertial pos="-0.00509532 -8.44195e-07 -0.00985131" mass="0.0630136"
+                    fullinertia="2.02694e-05 4.24266e-05 3.52575e-05 1.52007e-09 -2.02393e-06 -2.00442e-09" />
+                <!-- Part u_side_small_2023 -->
+                <geom class="collision" pos="-0.03144 3.46945e-18 -0.02375" quat="0.5 0.5 0.5 0.5"
+                    type="box" size="0.01875 0.02375 0.0015" />
+                <geom type="mesh" class="visual" pos="-0.03294 0.01875 0" quat="0.5 -0.5 0.5 -0.5"
+                    mesh="u_side_small_2023" material="u_side_small_2023_material" />
+                <!-- Part m2_5x4__configuration_default_13 -->
+                <!-- Part m2_5x5__configuration_size_41 -->
+                <!-- Part m2_5x4__configuration_default_14 -->
+                <!-- Part m2_5x25__configuration__25 -->
+                <!-- Part m2_5x4__configuration_default_15 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_125 -->
+                <!-- Part m2_5x25__configuration__25_2 -->
+                <!-- Part u_base_motors_blocs_2023 -->
+                <geom type="mesh" class="visual" pos="-0.03094 0.01875 3.46945e-18" quat="0 1 0 0"
+                    mesh="u_base_motors_blocs_2023" material="u_base_motors_blocs_2023_material" />
+                <!-- Part m2_5x8__configuration_copy_of_6_126 -->
+                <!-- Part m2_5x4__configuration_default_16 -->
+                <!-- Part m2_5x25__configuration__25_3 -->
+                <!-- Part m2_5x25__configuration__25_4 -->
+                <!-- Part m2_5x25__configuration__25_5 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_127 -->
+                <!-- Part m2_5x5__configuration_size_42 -->
+                <!-- Part m2_5x4__configuration_default_17 -->
+                <!-- Part m2_5x25__configuration__25_6 -->
+                <!-- Part m2_5x4__configuration_default_18 -->
+                <!-- Part m2_5x5__configuration_size_43 -->
+                <!-- Part m2_5x5__configuration_size_44 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_128 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_129 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_130 -->
+                <!-- Part m2_5x5__configuration_size_45 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_131 -->
+                <!-- Part m2_5x25__configuration__25_7 -->
+                <!-- Part m2_5x5__configuration_size_46 -->
+                <!-- Part u_side_small_with_trace_2023 -->
+                <geom class="collision" pos="0.0219 0 -0.02375" quat="0.5 -0.5 0.5 -0.5" type="box"
+                    size="0.01875 0.02375 0.0015" />
+                <geom type="mesh" class="visual" pos="0.0234 -0.01875 -3.46945e-18"
+                    quat="0.5 -0.5 -0.5 0.5" mesh="u_side_small_with_trace_2023"
+                    material="u_side_small_with_trace_2023_material" />
+                <!-- Part m2_5x8__configuration_copy_of_6_132 -->
+                <!-- Part m2_5x25__configuration__25_8 -->
+                <!-- Link mx106_block_hip__configuration_hip -->
+                <body name="mx106_block_hip__configuration_hip" pos="0.0234 1.38778e-17 -0.04"
+                    quat="0.5 0.5 -0.5 -0.5">
+                    <!-- Joint from u_block_2023 to mx106_block_hip__configuration_hip -->
+                    <joint name="left_hip_roll" type="hinge"
+                        range="-0.5235987755982988 0.6108652381980153" class="mx106" />
+                    <inertial pos="0.000114176 -0.0150181 0.00430854" mass="0.4071"
+                        fullinertia="0.000435657 0.000381691 0.000191264 -1.8283e-06 -8.62791e-07 -3.40819e-05" />
+                    <!-- Part m2_5x4__configuration_default_19 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_133 -->
+                    <!-- Part m2_5x10__configuration__10_13 -->
+                    <!-- Part hn05_i101_6 -->
+                    <geom type="mesh" class="visual" pos="-3.52496e-15 -3.98293e-15 0.04962"
+                        quat="1 2.05669e-14 1.22125e-15 -1.20039e-14" mesh="hn05_i101"
+                        material="hn05_i101_material" />
+                    <!-- Part mf128zz_6 -->
+                    <!-- Part m2_5x4__configuration_default_20 -->
+                    <!-- Part m3x6__configuration__8_6 -->
+                    <!-- Part m2_5x4__configuration_default_21 -->
+                    <!-- Part m2_5x10__configuration__10_14 -->
+                    <!-- Part m2_5x10__configuration__10_15 -->
+                    <!-- Part m2_5x4__configuration_default_22 -->
+                    <!-- Part m2_5x6__configuration__6_35 -->
+                    <!-- Part ecrou_2_5_58 -->
+                    <!-- Part fr05_s101_5 -->
+                    <geom type="mesh" class="visual" pos="-3.41394e-15 -3.91354e-15 0.0474"
+                        quat="0.5 -0.5 -0.5 0.5" mesh="fr05_s101" material="fr05_s101_material" />
+                    <!-- Part fr05_s101_6 -->
+                    <geom type="mesh" class="visual" pos="-3.49026e-15 -0.036 -0.0006"
+                        quat="0.5 0.5 -0.5 -0.5" mesh="fr05_s101" material="fr05_s101_material" />
+                    <!-- Part ecrou_2_5_59 -->
+                    <!-- Part fr08_b101 -->
+                    <!-- Part ecrou_2_5_60 -->
+                    <!-- Part m2_5x6__configuration__6_36 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_134 -->
+                    <!-- Part m2_5x4__configuration_default_23 -->
+                    <!-- Part m2_5x4__configuration_default_24 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_135 -->
+                    <!-- Part m2_5x4__configuration_default_25 -->
+                    <!-- Part m2_5x6__configuration__6_37 -->
+                    <!-- Part fr05_f101 -->
+                    <geom type="mesh" class="visual" pos="-3.44169e-15 -3.91354e-15 0.0474"
+                        quat="1 2.05391e-15 -0 -2.35922e-16" mesh="fr05_f101"
+                        material="fr05_f101_material" />
+                    <!-- Part m2_5x8__configuration_copy_of_6_136 -->
+                    <!-- Part m2_5x4__configuration_default_26 -->
+                    <!-- Part rx64_cap_6 -->
+                    <!-- Part m2_5x6__configuration__6_38 -->
+                    <!-- Part ecrou_2_5_61 -->
+                    <!-- Part m2_5x10__configuration__10_16 -->
+                    <!-- Part m3x6__configuration__8_7 -->
+                    <!-- Part hn05_i101_7 -->
+                    <geom type="mesh" class="visual" pos="-0.02214 -1.57513e-15 0.0234"
+                        quat="1.39798e-14 -0.707107 -6.43929e-15 0.707107" mesh="hn05_i101"
+                        material="hn05_i101_material" />
+                    <!-- Part rx64_cap_7 -->
+                    <!-- Part mf128zz_7 -->
+                    <!-- Part mx106 -->
+                    <geom class="collision" pos="-3.56195e-15 -0.01805 0.0234"
+                        quat="0.707107 2.32596e-14 0.707107 -1.77397e-14" type="box"
+                        size="0.0201 0.03255 0.023" />
+                    <geom type="mesh" class="visual" pos="-2.51188e-15 -2.60209e-15 0.0234"
+                        quat="0.707107 2.32596e-14 0.707107 -1.77397e-14" mesh="mx106"
+                        material="mx106_material" />
+                    <!-- Part hn05_n102_11 -->
+                    <geom type="mesh" class="visual" pos="-1.10328e-15 -1.34615e-15 -0.0025"
+                        quat="0.69352 0.69352 0.13795 0.13795" mesh="hn05_n102"
+                        material="hn05_n102_material" />
+                    <!-- Part mx106_2 -->
+                    <geom class="collision" pos="6.93889e-18 -0.01805 -0.026"
+                        quat="1 -0 2.77556e-17 -8.32667e-17" type="box" size="0.0201 0.03255 0.023" />
+                    <geom type="mesh" class="visual" pos="6.93889e-18 6.93889e-18 -0.026"
+                        quat="1 -0 2.77556e-17 -8.32667e-17" mesh="mx106" material="mx106_material" />
+                    <!-- Part m3x8__configuration__12_27 -->
+                    <!-- Part washer_ba1226 -->
+                    <!-- Part washer_ba1226_2 -->
+                    <!-- Part hn05_n102_12 -->
+                    <geom type="mesh" class="visual" pos="0.027 2.50494e-15 0.0234"
+                        quat="0.5 0.5 0.5 -0.5" mesh="hn05_n102" material="hn05_n102_material" />
+                    <!-- Part core_ba1226 -->
+                    <!-- Part m3x10__configuration__14_22 -->
+                    <!-- Link left_knee_2023 -->
+                    <body name="left_knee_2023" pos="0.0295 2.51882e-15 0.0234"
+                        quat="6.96125e-15 -0.707107 7.10543e-15 -0.707107">
+                        <!-- Joint from mx106_block_hip__configuration_hip to left_knee_2023 -->
+                        <joint name="left_hip_pitch" type="hinge"
+                            range="-1.5707963267948966 0.6981317007977318" class="mx106" />
+                        <inertial pos="-2.9715e-05 0.1015 -0.0290323" mass="0.275516"
+                            fullinertia="0.000556638 0.000127517 0.000475295 -1.38125e-07 9.89675e-10 7.92496e-06" />
+                        <!-- Part femur_marker -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_137 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_138 -->
+                        <!-- Part ecrou_2_5_62 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_139 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_140 -->
+                        <!-- Part ecrou_2_5_63 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_141 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_142 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_143 -->
+                        <!-- Part m2_5x6__configuration__6_39 -->
+                        <!-- Part ecrou_2_5_64 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_144 -->
+                        <!-- Part m2_5x6__configuration__6_40 -->
+                        <!-- Part ecrou_2_5_65 -->
+                        <!-- Part ecrou_2_5_66 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_145 -->
+                        <!-- Part fr05_s101_7 -->
+                        <geom type="mesh" class="visual" pos="-2.91911e-15 0.0855 -0.0295"
+                            quat="1 -1.72036e-13 -1.88738e-15 1.03265e-13" mesh="fr05_s101"
+                            material="fr05_s101_material" />
+                        <!-- Part m2_5x8__configuration_copy_of_6_146 -->
+                        <!-- Part ecrou_2_5_67 -->
+                        <!-- Part ecrou_2_5_68 -->
+                        <!-- Part ecrou_2_5_69 -->
+                        <!-- Part ecrou_2_5_70 -->
+                        <!-- Part ecrou_2_5_71 -->
+                        <!-- Part m3x6__configuration__8_8 -->
+                        <!-- Part hn05_i101_8 -->
+                        <geom type="mesh" class="visual" pos="-8.18746e-15 0.14 -0.05164"
+                            quat="1.59435e-17 1 4.71845e-16 4.55814e-16" mesh="hn05_i101"
+                            material="hn05_i101_material" />
+                        <!-- Part rx64_cap_8 -->
+                        <!-- Part mf128zz_8 -->
+                        <!-- Part mx106_3 -->
+                        <geom class="collision" pos="-2.49654e-15 0.12195 -0.0295"
+                            quat="1 -1.72036e-13 -1.88738e-15 1.03265e-13" type="box"
+                            size="0.0201 0.03255 0.023" />
+                        <geom type="mesh" class="visual" pos="-6.22289e-15 0.14 -0.0295"
+                            quat="1 -1.72036e-13 -1.88738e-15 1.03265e-13" mesh="mx106"
+                            material="mx106_material" />
+                        <!-- Part m2_5x5__configuration_size_47 -->
+                        <!-- Part parallel_pin_2_x_5__8a96b601dde6ec1f6b30033940938144 -->
+                        <!-- Part u_base_106_2023 -->
+                        <geom type="mesh" class="visual" pos="-2.91911e-15 0.0855 -0.0295"
+                            quat="0.5 0.5 -0.5 0.5" mesh="u_base_106_2023"
+                            material="u_base_106_2023_material" />
+                        <!-- Part u_side_femur_mir_2023 -->
+                        <geom class="collision" pos="7.24196e-16 0.03725 -0.057"
+                            quat="1.23647e-14 1 2.30788e-14 -4.00575e-14" type="box"
+                            size="0.015 0.04825 0.0015" />
+                        <geom type="mesh" class="visual" pos="3.30942e-15 0.0855 0.003"
+                            quat="1.23647e-14 1 2.30788e-14 -4.00575e-14"
+                            mesh="u_side_femur_mir_2023" material="u_side_femur_mir_2023_material" />
+                        <!-- Part parallel_pin_2_x_5__8a96b601dde6ec1f6b30033940938144_2 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_147 -->
+                        <!-- Part u_side_femur_2023 -->
+                        <geom class="collision" pos="-4.33681e-19 0.03725 0.0015"
+                            quat="1 0 -4.71845e-16 2.08167e-16" type="box"
+                            size="0.015 0.04825 0.0015" />
+                        <geom type="mesh" class="visual" pos="-4.33681e-19 0.0855 0.003"
+                            quat="0 1 0 0" mesh="u_side_femur_2023"
+                            material="u_side_femur_2023_material" />
+                        <!-- Part hn05_n102_13 -->
+                        <geom type="mesh" class="visual" pos="-3.86887e-15 0.14 -0.0035"
+                            quat="3.63412e-14 3.74535e-14 -0.707107 -0.707107" mesh="hn05_n102"
+                            material="hn05_n102_material" />
+                        <!-- Part m3x10__configuration__14_23 -->
+                        <!-- Part washer_ba1226_3 -->
+                        <!-- Part core_ba1226_2 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_148 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_149 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_150 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_151 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_152 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_153 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_154 -->
+                        <!-- Part m2_5x5__configuration_size_48 -->
+                        <!-- Part m2_5x5__configuration_size_49 -->
+                        <!-- Part m2_5x5__configuration_size_50 -->
+                        <!-- Part m2_5x5__configuration_size_51 -->
+                        <!-- Part m2_5x5__configuration_size_52 -->
+                        <!-- Part m2_5x5__configuration_size_53 -->
+                        <!-- Part m2_5x5__configuration_size_54 -->
+                        <!-- Part m2_5x5__configuration_size_55 -->
+                        <!-- Part m2_5x5__configuration_size_56 -->
+                        <!-- Part m2_5x5__configuration_size_57 -->
+                        <!-- Part m2_5x5__configuration_size_58 -->
+                        <!-- Link tibia_2023 -->
+                        <body name="tibia_2023" pos="-3.87277e-15 0.14 -0.001"
+                            quat="1 1.56397e-15 1.06859e-14 5.32352e-14">
+                            <!-- Joint from left_knee_2023 to tibia_2023 -->
+                            <joint name="left_knee" type="hinge" range="-0.0 2.2689280275926285"
+                                class="mx106" />
+                            <inertial pos="-0.00296199 0.0631405 -0.0268398" mass="0.113077"
+                                fullinertia="0.000351809 0.000103918 0.00027164 -6.49234e-06 2.04037e-08 -6.19964e-08" />
+                            <!-- Part tibia_marker -->
+                            <geom type="mesh" class="visual" pos="-0.000302197 -0.000312442 0.006"
+                                quat="1.47509e-15 1 -1.48492e-15 -1.04942e-14" mesh="tibia_marker"
+                                material="tibia_marker_material" />
+                            <!-- Part m2_5x5__configuration_size_59 -->
+                            <!-- Part m2_5x5__configuration_size_60 -->
+                            <!-- Part m2_5x5__configuration_size_61 -->
+                            <!-- Part m2_5x8__configuration_copy_of_6_155 -->
+                            <!-- Part ecrou_2_5_72 -->
+                            <!-- Part m2_5x5__configuration_size_62 -->
+                            <!-- Part renfort_tibia__configuration_simple_bearing -->
+                            <geom type="mesh" class="visual" pos="-0.00523756 0.038 -0.02722"
+                                quat="0.707107 1.49776e-14 -0.707107 1.70875e-14"
+                                mesh="renfort_tibia__configuration_simple_bearing"
+                                material="renfort_tibia__configuration_simple_bearing_material" />
+                            <!-- Part m2_5x5__configuration_size_63 -->
+                            <!-- Part m2_5x5__configuration_size_64 -->
+                            <!-- Part m2_5x5__configuration_size_65 -->
+                            <!-- Part m2_5x5__configuration_size_66 -->
+                            <!-- Part m2_5x5__configuration_size_67 -->
+                            <!-- Part m2_5x5__configuration_size_68 -->
+                            <!-- Part ecrou_2_5_73 -->
+                            <!-- Part m2_5x5__configuration_size_69 -->
+                            <!-- Part m2_5x5__configuration_size_70 -->
+                            <!-- Part m2_5x8__configuration_copy_of_6_156 -->
+                            <!-- Part tibia_plate_2023 -->
+                            <geom class="collision" pos="-0.0062131 0.068951 -0.05594"
+                                quat="6.93889e-18 0 -1 5.55112e-17" type="box"
+                                size="0.0202131 0.0850495 0.0015" />
+                            <geom type="mesh" class="visual" pos="7.19173e-15 -4.16334e-16 -0.05444"
+                                quat="0 1 0 0" mesh="tibia_plate_2023"
+                                material="tibia_plate_2023_material" />
+                            <!-- Part tibia_plate_2023_2 -->
+                            <geom class="collision" pos="-0.0062131 0.068951 0.0015"
+                                quat="6.93889e-18 0 -1 5.55112e-17" type="box"
+                                size="0.0202131 0.0850495 0.0015" />
+                            <geom type="mesh" class="visual" pos="4.33681e-19 0 0.003"
+                                quat="0 1 0 0" mesh="tibia_plate_2023"
+                                material="tibia_plate_2023_material" />
+                            <!-- Part m2_5x5__configuration_size_71 -->
+                            <!-- Part m2_5x5__configuration_size_72 -->
+                            <!-- Part m2_5x8__configuration_copy_of_6_157 -->
+                            <!-- Part m2_5x8__configuration_copy_of_6_158 -->
+                            <!-- Part ecrou_2_5_74 -->
+                            <!-- Part m2_5x5__configuration_size_73 -->
+                            <!-- Part m2_5x5__configuration_size_74 -->
+                            <!-- Part m2_5x5__configuration_size_75 -->
+                            <!-- Part m2_5x5__configuration_size_76 -->
+                            <!-- Part m2_5x5__configuration_size_77 -->
+                            <!-- Part m2_5x5__configuration_size_78 -->
+                            <!-- Part m2_5x5__configuration_size_79 -->
+                            <!-- Part m2_5x5__configuration_size_80 -->
+                            <!-- Part m2_5x5__configuration_size_81 -->
+                            <!-- Part m2_5x5__configuration_size_82 -->
+                            <!-- Part m2_5x5__configuration_size_83 -->
+                            <!-- Part m2_5x5__configuration_size_84 -->
+                            <!-- Part m2_5x5__configuration_size_85 -->
+                            <!-- Part m2_5x5__configuration_size_86 -->
+                            <!-- Part m2_5x5__configuration_size_87 -->
+                            <!-- Part m2_5x5__configuration_size_88 -->
+                            <!-- Part ecrou_2_5_75 -->
+                            <!-- Part m2_5x5__configuration_size_89 -->
+                            <!-- Part m2_5x5__configuration_size_90 -->
+                            <!-- Link mx106_covered_block_mir_ankle__configuration_default -->
+                            <body name="mx106_covered_block_mir_ankle__configuration_default"
+                                pos="1.34441e-17 0.14 -1.38778e-17"
+                                quat="7.21645e-16 -1.03818e-14 2.44249e-15 1">
+                                <!-- Joint from tibia_2023 to
+                                mx106_covered_block_mir_ankle__configuration_default -->
+                                <joint name="left_ankle_pitch" type="hinge"
+                                    range="-1.3089969389957472 1.3089969389957472" class="mx106" />
+                                <inertial pos="0.0194964 0.0165818 -0.0285982" mass="0.421345"
+                                    fullinertia="0.000211526 0.00039924 0.000472476 -3.74439e-05 -7.82088e-07 4.49439e-07" />
+                                <!-- Part m2_5x4__configuration_default_27 -->
+                                <!-- Part m2_5x6__configuration__6_41 -->
+                                <!-- Part m2_5x10__configuration__10_17 -->
+                                <!-- Part hn05_i101_9 -->
+                                <geom type="mesh" class="visual" pos="-0.02622 -2.33147e-15 -0.0285"
+                                    quat="1.47025e-13 0.707107 8.43769e-15 -0.707107"
+                                    mesh="hn05_i101" material="hn05_i101_material" />
+                                <!-- Part ecrou_2_5_76 -->
+                                <!-- Part mf128zz_9 -->
+                                <!-- Part m2_5x8__configuration_copy_of_6_159 -->
+                                <!-- Part m2_5x4__configuration_default_28 -->
+                                <!-- Part m3x6__configuration__8_9 -->
+                                <!-- Part m2_5x8__configuration_copy_of_6_160 -->
+                                <!-- Part m2_5x4__configuration_default_29 -->
+                                <!-- Part m2_5x10__configuration__10_18 -->
+                                <!-- Part m2_5x10__configuration__10_19 -->
+                                <!-- Part m2_5x4__configuration_default_30 -->
+                                <!-- Part m2_5x8__configuration_copy_of_6_161 -->
+                                <!-- Part ecrou_2_5_77 -->
+                                <!-- Part fr05_s101_8 -->
+                                <geom type="mesh" class="visual" pos="-0.024 -2.498e-15 -0.0285"
+                                    quat="0.707107 -2.2356e-14 6.32827e-15 -0.707107"
+                                    mesh="fr05_s101" material="fr05_s101_material" />
+                                <!-- Part fr05_s101_9 -->
+                                <geom type="mesh" class="visual" pos="0.024 0.036 -0.0285"
+                                    quat="0.707107 3.30527e-15 3.07532e-14 0.707107"
+                                    mesh="fr05_s101" material="fr05_s101_material" />
+                                <!-- Part ecrou_2_5_78 -->
+                                <!-- Part fr08_b101_2 -->
+                                <!-- Part ecrou_2_5_79 -->
+                                <!-- Part m2_5x8__configuration_copy_of_6_162 -->
+                                <!-- Part m2_5x6__configuration__6_42 -->
+                                <!-- Part m2_5x4__configuration_default_31 -->
+                                <!-- Part m2_5x4__configuration_default_32 -->
+                                <!-- Part m2_5x6__configuration__6_43 -->
+                                <!-- Part ankle_cover -->
+                                <!-- Part m2_5x4__configuration_default_33 -->
+                                <!-- Part m2_5x8__configuration_copy_of_6_163 -->
+                                <!-- Part m2_5x8__configuration_copy_of_6_164 -->
+                                <!-- Part fr05_f101_2 -->
+                                <geom type="mesh" class="visual" pos="-0.024 -2.44249e-15 -0.0285"
+                                    quat="1.41494e-13 0.707107 1.28786e-14 -0.707107"
+                                    mesh="fr05_f101" material="fr05_f101_material" />
+                                <!-- Part m2_5x6__configuration__6_44 -->
+                                <!-- Part m2_5x4__configuration_default_34 -->
+                                <!-- Part rx64_cap_9 -->
+                                <!-- Part m2_5x8__configuration_copy_of_6_165 -->
+                                <!-- Part m2_5x8__configuration_copy_of_6_166 -->
+                                <!-- Part ecrou_2_5_80 -->
+                                <!-- Part m2_5x10__configuration__10_20 -->
+                                <!-- Part ecrou_2_5_81 -->
+                                <!-- Part m3x6__configuration__8_10 -->
+                                <!-- Part hn05_i101_10 -->
+                                <geom type="mesh" class="visual"
+                                    pos="-3.79514e-15 -3.4972e-15 -0.05064"
+                                    quat="3.17329e-14 -5.4636e-14 1 -4.69263e-15" mesh="hn05_i101"
+                                    material="hn05_i101_material" />
+                                <!-- Part rx64_cap_10 -->
+                                <!-- Part mf128zz_10 -->
+                                <!-- Part mx106_4 -->
+                                <geom class="collision" pos="-2.59204e-16 0.01805 -0.0285"
+                                    quat="5.44283e-14 3.1591e-14 -3.10862e-15 1" type="box"
+                                    size="0.0201 0.03255 0.023" />
+                                <geom type="mesh" class="visual"
+                                    pos="-2.22608e-15 -1.83187e-15 -0.0285"
+                                    quat="5.44283e-14 3.1591e-14 -3.10862e-15 1" mesh="mx106"
+                                    material="mx106_material" />
+                                <!-- Part hn05_n102_14 -->
+                                <geom type="mesh" class="visual" pos="0.0259 -1.44329e-15 -0.0285"
+                                    quat="0.587938 -0.392847 0.392847 0.587938" mesh="hn05_n102"
+                                    material="hn05_n102_material" />
+                                <!-- Part mx106_5 -->
+                                <geom class="collision" pos="0.0494 0.01805 -0.0285"
+                                    quat="1.44429e-13 0.707107 1.63203e-14 -0.707107" type="box"
+                                    size="0.0201 0.03255 0.023" />
+                                <geom type="mesh" class="visual" pos="0.0494 -1.94289e-15 -0.0285"
+                                    quat="1.44429e-13 0.707107 1.63203e-14 -0.707107" mesh="mx106"
+                                    material="mx106_material" />
+                                <!-- Part m3x8__configuration__12_28 -->
+                                <!-- Part hn05_n102_15 -->
+                                <geom type="mesh" class="visual"
+                                    pos="-4.33681e-19 -5.55112e-17 -0.0025"
+                                    quat="0.707107 0.707107 -0 -1.442e-30" mesh="hn05_n102"
+                                    material="hn05_n102_material" />
+                                <!-- Part m3x10__configuration__14_24 -->
+                                <!-- Part washer_ba1226_4 -->
+                                <!-- Part core_ba1226_3 -->
+                                <!-- Link left_foot___side_default -->
+                                <body name="left_foot___side_default"
+                                    pos="0.0234 -7.82707e-15 -0.0285"
+                                    quat="0.707107 -6.51904e-15 -0.707107 5.6205e-15">
+                                    <!-- Joint from
+                                    mx106_covered_block_mir_ankle__configuration_default to
+                                    left_foot___side_default -->
+                                    <joint name="left_ankle_roll" type="hinge"
+                                        range="-0.7853981633974483 0.7853981633974483" class="mx106" />
+                                    <inertial pos="0.00454445 -0.0365542 0.0466461" mass="0.281856"
+                                        fullinertia="0.000718224 0.000922445 0.000265313 2.50911e-06 -4.6415e-06 -1.43537e-05" />
+                                    <!-- Part m2_5x10__configuration__10_21 -->
+                                    <!-- Part m2_5x10__configuration__10_22 -->
+                                    <!-- Part m2_5x10__configuration__10_23 -->
+                                    <!-- Part m2_5x10__configuration__10_24 -->
+                                    <!-- Part m3x8__configuration__8 -->
+                                    <!-- Part entretoise_m_f_8xm3__length__7 -->
+                                    <!-- Part m3x8__configuration__8_2 -->
+                                    <!-- Part m3x5__configuration__5 -->
+                                    <!-- Part ecrou_4_3 -->
+                                    <!-- Part m4x10__length__10 -->
+                                    <!-- Part m4x10__length__10_2 -->
+                                    <!-- Part m3x12__configuration__16 -->
+                                    <!-- Part ecrou_3__nylstop_false_5 -->
+                                    <!-- Part mounting_block -->
+                                    <!-- Part ecrou_4_4 -->
+                                    <!-- Part m3x5__configuration_default -->
+                                    <!-- Part ecrou_4_5 -->
+                                    <!-- Part entretoise_m_f_8xm3__length__7_2 -->
+                                    <!-- Part m4x10__length__10_3 -->
+                                    <!-- Part m3x5__configuration_default_2 -->
+                                    <!-- Part m4x10__length__10_4 -->
+                                    <!-- Part m3x5__configuration_default_3 -->
+                                    <!-- Part m3x8__configuration__8_3 -->
+                                    <!-- Part gauge_foot_protection -->
+                                    <!-- Part foottip -->
+                                    <!-- Part mounting_block_2 -->
+                                    <!-- Part foot_plate -->
+                                    <geom class="collision" pos="0.0055 -0.0415 0.03867"
+                                        quat="0.707107 -0.707107 -2.71005e-13 -2.8821e-13"
+                                        type="box" size="0.046 0.0788 0.0015" />
+                                    <geom type="mesh" class="visual" pos="0.0055 -0.043 0.03867"
+                                        quat="2.88204e-13 -2.71101e-13 0.707107 0.707107"
+                                        mesh="foot_plate" material="foot_plate_material" />
+                                    <!-- Part m3x8__configuration__8_4 -->
+                                    <!-- Part mounting_block_3 -->
+                                    <!-- Part m4x10__length__10_5 -->
+                                    <!-- Part m3x5__configuration__5_2 -->
+                                    <!-- Part ecrou_4_6 -->
+                                    <!-- Part ecrou_4_7 -->
+                                    <!-- Part m3x5__configuration__5_3 -->
+                                    <!-- Part m4x10__length__10_6 -->
+                                    <!-- Part entretoise_m_f_8xm3__length__7_3 -->
+                                    <!-- Part entretoise_m_f_8xm3__length__7_4 -->
+                                    <!-- Part m3x12__configuration__16_2 -->
+                                    <!-- Part m3x12__configuration__16_3 -->
+                                    <!-- Part ecrou_3__nylstop_false_6 -->
+                                    <!-- Part ecrou_4_8 -->
+                                    <!-- Part ecrou_4_9 -->
+                                    <!-- Part ecrou_4_10 -->
+                                    <!-- Part ecrou_3__nylstop_false_7 -->
+                                    <!-- Part m3x5__configuration__5_4 -->
+                                    <!-- Part m4x10__length__10_7 -->
+                                    <!-- Part mounting_block_4 -->
+                                    <!-- Part m3x5__configuration_default_4 -->
+                                    <!-- Part m4x10__length__10_8 -->
+                                    <!-- Part u_base_motors_blocs -->
+                                    <geom class="collision" pos="1.00892e-14 -0.036875 0.02817"
+                                        quat="0.5 0.5 0.5 -0.5" type="box"
+                                        size="0.02617 0.015 0.003125" />
+                                    <geom type="mesh" class="visual" pos="0.015 -0.04 0.05434"
+                                        quat="0.5 -0.5 0.5 0.5" mesh="u_base_motors_blocs"
+                                        material="u_base_motors_blocs_material" />
+                                    <!-- Part ecrou_2_5_82 -->
+                                    <!-- Part ecrou_2_5_83 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_167 -->
+                                    <!-- Part m2_5x4__configuration_default_35 -->
+                                    <!-- Part u_side_small -->
+                                    <geom type="mesh" class="visual" pos="0.015 -0.04 0.05634"
+                                        quat="8.83378e-14 -4.94304e-14 1 -5.99564e-15"
+                                        mesh="u_side_small" material="u_side_small_material" />
+                                    <!-- Part m2_5x5__configuration_size_91 -->
+                                    <!-- Part ecrou_2_5_84 -->
+                                    <!-- Part ecrou_2_5_85 -->
+                                    <!-- Part u_side_small_with_trace -->
+                                    <geom type="mesh" class="visual" pos="-0.015 -0.04 0"
+                                        quat="1 -0 1.11022e-16 -2.77556e-17"
+                                        mesh="u_side_small_with_trace"
+                                        material="u_side_small_with_trace_material" />
+                                    <!-- Part load_cell_40kg -->
+                                    <!-- Part nylon_ring -->
+                                    <!-- Part cleat -->
+                                    <geom class="collision" pos="0.0435 -0.0535 0.10947"
+                                        quat="7.58584e-14 3.02643e-14 0.707107 -0.707107"
+                                        type="cylinder" size="0.008 0.008" />
+                                    <geom type="mesh" class="visual" pos="0.0435 -0.0615 0.10947"
+                                        quat="7.50394e-14 -3.19828e-14 1 -3.69149e-15" mesh="cleat"
+                                        material="cleat_material" />
+                                    <!-- Part load_cell_40kg_2 -->
+                                    <!-- Part nylon_ring_2 -->
+                                    <!-- Part cleat_2 -->
+                                    <geom class="collision" pos="-0.0325 -0.0535 0.10947"
+                                        quat="7.58584e-14 3.02643e-14 0.707107 -0.707107"
+                                        type="cylinder" size="0.008 0.008" />
+                                    <geom type="mesh" class="visual" pos="-0.0325 -0.0615 0.10947"
+                                        quat="7.50394e-14 -3.19828e-14 1 -3.69149e-15" mesh="cleat"
+                                        material="cleat_material" />
+                                    <!-- Part load_cell_40kg_3 -->
+                                    <!-- Part nylon_ring_3 -->
+                                    <!-- Part cleat_3 -->
+                                    <geom class="collision" pos="0.0435 -0.0535 -0.03213"
+                                        quat="0.707107 0.707107 -2.35367e-14 -2.95746e-15"
+                                        type="cylinder" size="0.008 0.008" />
+                                    <geom type="mesh" class="visual" pos="0.0435 -0.0615 -0.03213"
+                                        quat="1 -3.41047e-15 -1.4766e-14 -1.84635e-14" mesh="cleat"
+                                        material="cleat_material" />
+                                    <!-- Part load_cell_40kg_4 -->
+                                    <!-- Part nylon_ring_4 -->
+                                    <!-- Part cleat_4 -->
+                                    <geom class="collision" pos="-0.0325 -0.0535 -0.03213"
+                                        quat="0.707107 0.707107 -2.35367e-14 -2.95746e-15"
+                                        type="cylinder" size="0.008 0.008" />
+                                    <geom type="mesh" class="visual" pos="-0.0325 -0.0615 -0.03213"
+                                        quat="1 -3.41047e-15 -1.4766e-14 -1.84635e-14" mesh="cleat"
+                                        material="cleat_material" />
+                                    <!-- Part m2_5x5__configuration_size_92 -->
+                                    <!-- Part m2_5x5__configuration_size_93 -->
+                                    <!-- Part m2_5x5__configuration_size_94 -->
+                                    <!-- Part m2_5x5__configuration_size_95 -->
+                                    <!-- Part m2_5x5__configuration_size_96 -->
+                                    <!-- Part m2_5x4__configuration_default_36 -->
+                                    <!-- Part m2_5x4__configuration_default_37 -->
+                                    <!-- Part m2_5x4__configuration_default_38 -->
+                                    <!-- Part m2_5x4__configuration_default_39 -->
+                                    <!-- Part m2_5x4__configuration_default_40 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_168 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_169 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_170 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_171 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_172 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_173 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_174 -->
+                                    <!-- Frame left_foot -->
+                                    <site group="0" name="left_foot" pos="0.003 -0.0615 0.03617"
+                                        quat="0.5 -0.5 -0.5 -0.5" />
+                                    <!-- Frame left_ps_0 -->
+                                    <site group="0" name="left_ps_0" pos="-0.0325 -0.0615 0.10947"
+                                        quat="0.5 -0.5 -0.5 -0.5" />
+                                    <!-- Frame left_ps_1 -->
+                                    <site group="0" name="left_ps_1" pos="-0.0325 -0.0615 -0.03213"
+                                        quat="0.5 -0.5 -0.5 -0.5" />
+                                    <!-- Frame left_ps_2 -->
+                                    <site group="0" name="left_ps_2" pos="0.0435 -0.0615 -0.03213"
+                                        quat="0.5 -0.5 -0.5 -0.5" />
+                                    <!-- Frame left_ps_3 -->
+                                    <site group="0" name="left_ps_3" pos="0.0435 -0.0615 0.10947"
+                                        quat="0.5 -0.5 -0.5 -0.5" />
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+            <!-- Link u_block_2023_2 -->
+            <body name="u_block_2023_2" pos="0.0033892 -0.0463999 -0.021"
+                quat="3.38619e-14 -2.17881e-15 -2.22045e-14 -1">
+                <!-- Joint from torso_2023 to u_block_2023_2 -->
+                <joint name="right_hip_yaw" type="hinge"
+                    range="-1.0471975511965976 1.0471975511965976" class="mx64" />
+                <inertial pos="-0.00509532 -8.44195e-07 -0.00985131" mass="0.0630136"
+                    fullinertia="2.02694e-05 4.24266e-05 3.52575e-05 1.52007e-09 -2.02393e-06 -2.00442e-09" />
+                <!-- Part u_side_small_2023_2 -->
+                <geom class="collision" pos="-0.03144 6.93889e-18 -0.02375" quat="0.5 0.5 0.5 0.5"
+                    type="box" size="0.01875 0.02375 0.0015" />
+                <geom type="mesh" class="visual" pos="-0.03294 0.01875 -3.46945e-18"
+                    quat="0.5 -0.5 0.5 -0.5" mesh="u_side_small_2023"
+                    material="u_side_small_2023_material" />
+                <!-- Part m2_5x4__configuration_default_41 -->
+                <!-- Part m2_5x5__configuration_size_97 -->
+                <!-- Part m2_5x4__configuration_default_42 -->
+                <!-- Part m2_5x25__configuration__25_9 -->
+                <!-- Part m2_5x4__configuration_default_43 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_175 -->
+                <!-- Part m2_5x25__configuration__25_10 -->
+                <!-- Part u_base_motors_blocs_2023_2 -->
+                <geom type="mesh" class="visual" pos="-0.03094 0.01875 0" quat="0 1 0 0"
+                    mesh="u_base_motors_blocs_2023" material="u_base_motors_blocs_2023_material" />
+                <!-- Part m2_5x8__configuration_copy_of_6_176 -->
+                <!-- Part m2_5x4__configuration_default_44 -->
+                <!-- Part m2_5x25__configuration__25_11 -->
+                <!-- Part m2_5x25__configuration__25_12 -->
+                <!-- Part m2_5x25__configuration__25_13 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_177 -->
+                <!-- Part m2_5x5__configuration_size_98 -->
+                <!-- Part m2_5x4__configuration_default_45 -->
+                <!-- Part m2_5x25__configuration__25_14 -->
+                <!-- Part m2_5x4__configuration_default_46 -->
+                <!-- Part m2_5x5__configuration_size_99 -->
+                <!-- Part m2_5x5__configuration_size_100 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_178 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_179 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_180 -->
+                <!-- Part m2_5x5__configuration_size_101 -->
+                <!-- Part m2_5x8__configuration_copy_of_6_181 -->
+                <!-- Part m2_5x25__configuration__25_15 -->
+                <!-- Part m2_5x5__configuration_size_102 -->
+                <!-- Part u_side_small_with_trace_2023_2 -->
+                <geom class="collision" pos="0.0219 -1.04083e-17 -0.02375" quat="0.5 -0.5 0.5 -0.5"
+                    type="box" size="0.01875 0.02375 0.0015" />
+                <geom type="mesh" class="visual" pos="0.0234 -0.01875 -5.89806e-17"
+                    quat="0.5 -0.5 -0.5 0.5" mesh="u_side_small_with_trace_2023"
+                    material="u_side_small_with_trace_2023_material" />
+                <!-- Part m2_5x8__configuration_copy_of_6_182 -->
+                <!-- Part m2_5x25__configuration__25_16 -->
+                <!-- Link mx106_block_mir_hip__configuration_hip -->
+                <body name="mx106_block_mir_hip__configuration_hip" pos="0.0234 -1.38778e-17 -0.04"
+                    quat="0.5 0.5 -0.5 -0.5">
+                    <!-- Joint from u_block_2023_2 to mx106_block_mir_hip__configuration_hip -->
+                    <joint name="right_hip_roll" type="hinge"
+                        range="-0.6108652381980153 0.5235987755982988" class="mx106" />
+                    <inertial pos="-0.000111954 -0.0150181 0.00431133" mass="0.4071"
+                        fullinertia="0.0004357 0.000381734 0.000191264 1.81997e-06 8.94591e-07 -3.4087e-05" />
+                    <!-- Part m2_5x4__configuration_default_47 -->
+                    <!-- Part m2_5x6__configuration__6_45 -->
+                    <!-- Part m2_5x10__configuration__10_25 -->
+                    <!-- Part hn05_i101_11 -->
+                    <geom type="mesh" class="visual" pos="-1.22471e-14 -4.34375e-15 0.04962"
+                        quat="1 -3.56798e-14 -1.48215e-13 7.8458e-14" mesh="hn05_i101"
+                        material="hn05_i101_material" />
+                    <!-- Part mf128zz_11 -->
+                    <!-- Part m2_5x4__configuration_default_48 -->
+                    <!-- Part m3x6__configuration__8_11 -->
+                    <!-- Part m2_5x4__configuration_default_49 -->
+                    <!-- Part m2_5x10__configuration__10_26 -->
+                    <!-- Part m2_5x10__configuration__10_27 -->
+                    <!-- Part m2_5x4__configuration_default_50 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_183 -->
+                    <!-- Part ecrou_2_5_86 -->
+                    <!-- Part fr05_s101_10 -->
+                    <geom type="mesh" class="visual" pos="-1.18586e-14 -4.1564e-15 0.0474"
+                        quat="0.5 -0.5 -0.5 0.5" mesh="fr05_s101" material="fr05_s101_material" />
+                    <!-- Part fr05_s101_11 -->
+                    <geom type="mesh" class="visual" pos="8.08381e-15 -0.036 -0.0006"
+                        quat="0.5 0.5 -0.5 -0.5" mesh="fr05_s101" material="fr05_s101_material" />
+                    <!-- Part ecrou_2_5_87 -->
+                    <!-- Part fr08_b101_3 -->
+                    <!-- Part ecrou_2_5_88 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_184 -->
+                    <!-- Part m2_5x6__configuration__6_46 -->
+                    <!-- Part m2_5x4__configuration_default_51 -->
+                    <!-- Part m2_5x4__configuration_default_52 -->
+                    <!-- Part m2_5x6__configuration__6_47 -->
+                    <!-- Part m2_5x4__configuration_default_53 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_185 -->
+                    <!-- Part fr05_f101_3 -->
+                    <geom type="mesh" class="visual" pos="-1.18586e-14 -4.1564e-15 0.0474"
+                        quat="1 5.05151e-15 2.22045e-16 2.22044e-16" mesh="fr05_f101"
+                        material="fr05_f101_material" />
+                    <!-- Part m2_5x6__configuration__6_48 -->
+                    <!-- Part m2_5x4__configuration_default_54 -->
+                    <!-- Part rx64_cap_11 -->
+                    <!-- Part m2_5x8__configuration_copy_of_6_186 -->
+                    <!-- Part ecrou_2_5_89 -->
+                    <!-- Part m2_5x10__configuration__10_28 -->
+                    <!-- Part m3x6__configuration__8_12 -->
+                    <!-- Part hn05_i101_12 -->
+                    <geom type="mesh" class="visual" pos="0.02214 8.25728e-16 0.0234"
+                        quat="3.39473e-14 -0.707107 -1.02363e-13 -0.707107" mesh="hn05_i101"
+                        material="hn05_i101_material" />
+                    <!-- Part rx64_cap_12 -->
+                    <!-- Part mf128zz_12 -->
+                    <!-- Part mx106_6 -->
+                    <geom class="collision" pos="-2.2102e-15 -0.01805 0.0234"
+                        quat="0.707107 1.37911e-13 -0.707107 8.8791e-14" type="box"
+                        size="0.0201 0.03255 0.023" />
+                    <geom type="mesh" class="visual" pos="-7.99361e-15 -3.07393e-15 0.0234"
+                        quat="0.707107 1.37911e-13 -0.707107 8.8791e-14" mesh="mx106"
+                        material="mx106_material" />
+                    <!-- Part hn05_n102_16 -->
+                    <geom type="mesh" class="visual" pos="-3.78864e-15 -1.54043e-15 -0.0025"
+                        quat="0.69352 0.69352 -0.13795 -0.13795" mesh="hn05_n102"
+                        material="hn05_n102_material" />
+                    <!-- Part mx106_7 -->
+                    <geom class="collision" pos="-2.35337e-34 -0.01805 -0.026"
+                        quat="1 -0 1.249e-16 5.20417e-18" type="box" size="0.0201 0.03255 0.023" />
+                    <geom type="mesh" class="visual" pos="0 0 -0.026"
+                        quat="1 -0 1.249e-16 5.20417e-18" mesh="mx106" material="mx106_material" />
+                    <!-- Part m3x8__configuration__12_29 -->
+                    <!-- Part washer_ba1226_5 -->
+                    <!-- Part washer_ba1226_6 -->
+                    <!-- Part hn05_n102_17 -->
+                    <geom type="mesh" class="visual" pos="-0.027 -7.78544e-15 0.0234"
+                        quat="0.5 0.5 -0.5 0.5" mesh="hn05_n102" material="hn05_n102_material" />
+                    <!-- Part core_ba1226_4 -->
+                    <!-- Part m3x10__configuration__14_25 -->
+                    <!-- Link right_knee_2023 -->
+                    <body name="right_knee_2023" pos="-0.0295 -8.44463e-15 0.0234"
+                        quat="0.707107 -9.44579e-14 0.707107 8.61637e-14">
+                        <!-- Joint from mx106_block_mir_hip__configuration_hip to right_knee_2023 -->
+                        <joint name="right_hip_pitch" type="hinge"
+                            range="-1.5707963267948966 0.6981317007977318" class="mx106" />
+                        <inertial pos="-2.9715e-05 -0.1015 0.0290188" mass="0.275516"
+                            fullinertia="0.000556635 0.000127513 0.000475295 1.38125e-07 -8.79221e-10 7.95953e-06" />
+                        <!-- Part m2_5x6__configuration__6_49 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_187 -->
+                        <!-- Part ecrou_2_5_90 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_188 -->
+                        <!-- Part m2_5x6__configuration__6_50 -->
+                        <!-- Part ecrou_2_5_91 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_189 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_190 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_191 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_192 -->
+                        <!-- Part ecrou_2_5_92 -->
+                        <!-- Part femur_marker_2 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_193 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_194 -->
+                        <!-- Part ecrou_2_5_93 -->
+                        <!-- Part ecrou_2_5_94 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_195 -->
+                        <!-- Part fr05_s101_12 -->
+                        <geom type="mesh" class="visual" pos="-3.35712e-15 -0.0855 0.0295"
+                            quat="8.86097e-15 -1 1.99771e-14 -1.19601e-14" mesh="fr05_s101"
+                            material="fr05_s101_material" />
+                        <!-- Part m2_5x8__configuration_copy_of_6_196 -->
+                        <!-- Part ecrou_2_5_95 -->
+                        <!-- Part ecrou_2_5_96 -->
+                        <!-- Part ecrou_2_5_97 -->
+                        <!-- Part ecrou_2_5_98 -->
+                        <!-- Part ecrou_2_5_99 -->
+                        <!-- Part m3x6__configuration__8_13 -->
+                        <!-- Part hn05_i101_13 -->
+                        <geom type="mesh" class="visual" pos="-2.68019e-14 -0.14 0.05164"
+                            quat="1 5.48285e-14 -2.40918e-14 -1.3841e-13" mesh="hn05_i101"
+                            material="hn05_i101_material" />
+                        <!-- Part rx64_cap_13 -->
+                        <!-- Part mf128zz_13 -->
+                        <!-- Part mx106_8 -->
+                        <geom class="collision" pos="-2.03668e-14 -0.12195 0.0295"
+                            quat="5.49456e-14 -1 1.38389e-13 -2.33641e-14" type="box"
+                            size="0.0201 0.03255 0.023" />
+                        <geom type="mesh" class="visual" pos="-2.53617e-14 -0.14 0.0295"
+                            quat="5.49456e-14 -1 1.38389e-13 -2.33641e-14" mesh="mx106"
+                            material="mx106_material" />
+                        <!-- Part m2_5x5__configuration_size_103 -->
+                        <!-- Part parallel_pin_2_x_5__8a96b601dde6ec1f6b30033940938144_3 -->
+                        <!-- Part u_base_106_2023_2 -->
+                        <geom type="mesh" class="visual" pos="-3.35712e-15 -0.0855 0.0295"
+                            quat="0.5 -0.5 0.5 0.5" mesh="u_base_106_2023"
+                            material="u_base_106_2023_material" />
+                        <!-- Part u_side_femur_mir_2023_2 -->
+                        <geom class="collision" pos="6.01282e-15 -0.03725 0.057"
+                            quat="1 3.08208e-14 -3.10862e-14 -1.0103e-13" type="box"
+                            size="0.015 0.04825 0.0015" />
+                        <geom type="mesh" class="visual" pos="1.38778e-17 -0.0855 -0.003"
+                            quat="1 3.08208e-14 -3.10862e-14 -1.0103e-13"
+                            mesh="u_side_femur_mir_2023" material="u_side_femur_mir_2023_material" />
+                        <!-- Part parallel_pin_2_x_5__8a96b601dde6ec1f6b30033940938144_4 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_197 -->
+                        <!-- Part u_side_femur_2023_2 -->
+                        <geom class="collision" pos="-3.00731e-32 -0.03725 -0.0015" quat="0 1 0 0"
+                            type="box" size="0.015 0.04825 0.0015" />
+                        <geom type="mesh" class="visual" pos="0 -0.0855 -0.003"
+                            quat="1 -0 0 1.11022e-16" mesh="u_side_femur_2023"
+                            material="u_side_femur_2023_material" />
+                        <!-- Part hn05_n102_18 -->
+                        <geom type="mesh" class="visual" pos="-2.26629e-14 -0.14 0.0035"
+                            quat="6.14168e-14 -1.51409e-13 -0.707107 0.707107" mesh="hn05_n102"
+                            material="hn05_n102_material" />
+                        <!-- Part m3x10__configuration__14_26 -->
+                        <!-- Part washer_ba1226_7 -->
+                        <!-- Part core_ba1226_5 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_198 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_199 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_200 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_201 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_202 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_203 -->
+                        <!-- Part m2_5x8__configuration_copy_of_6_204 -->
+                        <!-- Part m2_5x5__configuration_size_104 -->
+                        <!-- Part m2_5x5__configuration_size_105 -->
+                        <!-- Part m2_5x5__configuration_size_106 -->
+                        <!-- Part m2_5x5__configuration_size_107 -->
+                        <!-- Part m2_5x5__configuration_size_108 -->
+                        <!-- Part m2_5x5__configuration_size_109 -->
+                        <!-- Part m2_5x5__configuration_size_110 -->
+                        <!-- Part m2_5x5__configuration_size_111 -->
+                        <!-- Part m2_5x5__configuration_size_112 -->
+                        <!-- Part m2_5x5__configuration_size_113 -->
+                        <!-- Part m2_5x5__configuration_size_114 -->
+                        <!-- Link tibia_2023_2 -->
+                        <body name="tibia_2023_2" pos="-2.23445e-14 -0.14 0.001"
+                            quat="1.5124e-13 -1.23946e-15 6.66134e-16 1">
+                            <!-- Joint from right_knee_2023 to tibia_2023_2 -->
+                            <joint name="right_knee" type="hinge" range="0.0 2.2689280275926285"
+                                class="mx106" />
+                            <inertial pos="-0.00296199 0.0631406 0.0268398" mass="0.113077"
+                                fullinertia="0.000351809 0.000103918 0.00027164 -6.49234e-06 -2.0383e-08 6.21189e-08" />
+                            <!-- Part tibia_marker_2 -->
+                            <geom type="mesh" class="visual" pos="-0.000301911 -0.000310677 -0.004"
+                                quat="2.19616e-15 -1 4.16334e-17 -6.245e-17" mesh="tibia_marker"
+                                material="tibia_marker_material" />
+                            <!-- Part m2_5x5__configuration_size_115 -->
+                            <!-- Part m2_5x5__configuration_size_116 -->
+                            <!-- Part m2_5x5__configuration_size_117 -->
+                            <!-- Part m2_5x8__configuration_copy_of_6_205 -->
+                            <!-- Part ecrou_2_5_100 -->
+                            <!-- Part m2_5x5__configuration_size_118 -->
+                            <!-- Part renfort_tibia__configuration_simple_bearing_2 -->
+                            <geom type="mesh" class="visual" pos="-0.00523756 0.038 0.02722"
+                                quat="0.707107 3.36398e-14 -0.707107 9.26366e-14"
+                                mesh="renfort_tibia__configuration_simple_bearing"
+                                material="renfort_tibia__configuration_simple_bearing_material" />
+                            <!-- Part m2_5x5__configuration_size_119 -->
+                            <!-- Part m2_5x5__configuration_size_120 -->
+                            <!-- Part m2_5x5__configuration_size_121 -->
+                            <!-- Part m2_5x5__configuration_size_122 -->
+                            <!-- Part m2_5x5__configuration_size_123 -->
+                            <!-- Part m2_5x5__configuration_size_124 -->
+                            <!-- Part ecrou_2_5_101 -->
+                            <!-- Part m2_5x5__configuration_size_125 -->
+                            <!-- Part m2_5x5__configuration_size_126 -->
+                            <!-- Part m2_5x8__configuration_copy_of_6_206 -->
+                            <!-- Part tibia_plate_2023_3 -->
+                            <geom class="collision" pos="-0.0062131 0.068951 -0.0015"
+                                quat="3.33067e-16 0 -1 -1.45717e-16" type="box"
+                                size="0.0202131 0.0850495 0.0015" />
+                            <geom type="mesh" class="visual" pos="0 2.77556e-17 0" quat="0 1 0 0"
+                                mesh="tibia_plate_2023" material="tibia_plate_2023_material" />
+                            <!-- Part tibia_plate_2023_4 -->
+                            <geom class="collision" pos="-0.0062131 0.068951 0.05594"
+                                quat="1.57409e-14 9.57567e-16 -1 2.86403e-14" type="box"
+                                size="0.0202131 0.0850495 0.0015" />
+                            <geom type="mesh" class="visual" pos="2.81372e-14 4.44089e-15 0.05744"
+                                quat="2.86455e-14 1 9.57567e-16 -1.5727e-14" mesh="tibia_plate_2023"
+                                material="tibia_plate_2023_material" />
+                            <!-- Part m2_5x5__configuration_size_127 -->
+                            <!-- Part m2_5x5__configuration_size_128 -->
+                            <!-- Part m2_5x8__configuration_copy_of_6_207 -->
+                            <!-- Part m2_5x8__configuration_copy_of_6_208 -->
+                            <!-- Part ecrou_2_5_102 -->
+                            <!-- Part m2_5x5__configuration_size_129 -->
+                            <!-- Part m2_5x5__configuration_size_130 -->
+                            <!-- Part m2_5x5__configuration_size_131 -->
+                            <!-- Part m2_5x5__configuration_size_132 -->
+                            <!-- Part m2_5x5__configuration_size_133 -->
+                            <!-- Part m2_5x5__configuration_size_134 -->
+                            <!-- Part m2_5x5__configuration_size_135 -->
+                            <!-- Part m2_5x5__configuration_size_136 -->
+                            <!-- Part m2_5x5__configuration_size_137 -->
+                            <!-- Part m2_5x5__configuration_size_138 -->
+                            <!-- Part m2_5x5__configuration_size_139 -->
+                            <!-- Part m2_5x5__configuration_size_140 -->
+                            <!-- Part m2_5x5__configuration_size_141 -->
+                            <!-- Part m2_5x5__configuration_size_142 -->
+                            <!-- Part m2_5x5__configuration_size_143 -->
+                            <!-- Part m2_5x5__configuration_size_144 -->
+                            <!-- Part ecrou_2_5_103 -->
+                            <!-- Part m2_5x5__configuration_size_145 -->
+                            <!-- Part m2_5x5__configuration_size_146 -->
+                            <!-- Link mx106_covered_block_ankle__configuration_default -->
+                            <body name="mx106_covered_block_ankle__configuration_default"
+                                pos="1.38778e-17 0.14 0"
+                                quat="1 1.16544e-15 2.22045e-15 -1.66533e-16">
+                                <!-- Joint from tibia_2023_2 to
+                                mx106_covered_block_ankle__configuration_default -->
+                                <joint name="right_ankle_pitch" type="hinge"
+                                    range="-1.3089969389957472 1.3089969389957472" class="mx106" />
+                                <inertial pos="-0.0194991 -0.0165818 0.0285961" mass="0.421345"
+                                    fullinertia="0.000211526 0.000399196 0.000472432 -3.7437e-05 -8.13738e-07 4.59138e-07" />
+                                <!-- Part m2_5x4__configuration_default_55 -->
+                                <!-- Part m2_5x8__configuration_copy_of_6_209 -->
+                                <!-- Part m2_5x10__configuration__10_29 -->
+                                <!-- Part hn05_i101_14 -->
+                                <geom type="mesh" class="visual" pos="0.02622 2.38698e-15 0.0285"
+                                    quat="0.707107 -2.48992e-13 0.707107 -1.71679e-14"
+                                    mesh="hn05_i101" material="hn05_i101_material" />
+                                <!-- Part mf128zz_14 -->
+                                <!-- Part m2_5x4__configuration_default_56 -->
+                                <!-- Part m3x6__configuration__8_14 -->
+                                <!-- Part m2_5x4__configuration_default_57 -->
+                                <!-- Part m2_5x10__configuration__10_30 -->
+                                <!-- Part m2_5x10__configuration__10_31 -->
+                                <!-- Part m2_5x4__configuration_default_58 -->
+                                <!-- Part ankle_cover_2 -->
+                                <!-- Part m2_5x6__configuration__6_51 -->
+                                <!-- Part ecrou_2_5_104 -->
+                                <!-- Part m2_5x8__configuration_copy_of_6_210 -->
+                                <!-- Part fr05_s101_13 -->
+                                <geom type="mesh" class="visual" pos="0.024 1.77636e-15 0.0285"
+                                    quat="0.707107 -4.30549e-16 1.54765e-13 0.707107"
+                                    mesh="fr05_s101" material="fr05_s101_material" />
+                                <!-- Part m2_5x8__configuration_copy_of_6_211 -->
+                                <!-- Part m2_5x8__configuration_copy_of_6_212 -->
+                                <!-- Part m2_5x8__configuration_copy_of_6_213 -->
+                                <!-- Part fr05_s101_14 -->
+                                <geom type="mesh" class="visual" pos="-0.024 -0.036 0.0285"
+                                    quat="0.707107 -3.30946e-14 -6.65024e-14 -0.707107"
+                                    mesh="fr05_s101" material="fr05_s101_material" />
+                                <!-- Part ecrou_2_5_105 -->
+                                <!-- Part fr08_b101_4 -->
+                                <!-- Part ecrou_2_5_106 -->
+                                <!-- Part ecrou_2_5_107 -->
+                                <!-- Part m2_5x6__configuration__6_52 -->
+                                <!-- Part m2_5x8__configuration_copy_of_6_214 -->
+                                <!-- Part m2_5x4__configuration_default_59 -->
+                                <!-- Part ecrou_2_5_108 -->
+                                <!-- Part m2_5x4__configuration_default_60 -->
+                                <!-- Part m2_5x8__configuration_copy_of_6_215 -->
+                                <!-- Part m2_5x4__configuration_default_61 -->
+                                <!-- Part m2_5x6__configuration__6_53 -->
+                                <!-- Part fr05_f101_4 -->
+                                <geom type="mesh" class="visual" pos="0.024 1.88738e-15 0.0285"
+                                    quat="0.707107 -2.61519e-13 0.707107 3.80718e-15"
+                                    mesh="fr05_f101" material="fr05_f101_material" />
+                                <!-- Part m2_5x8__configuration_copy_of_6_216 -->
+                                <!-- Part m2_5x4__configuration_default_62 -->
+                                <!-- Part rx64_cap_14 -->
+                                <!-- Part m2_5x6__configuration__6_54 -->
+                                <!-- Part ecrou_2_5_109 -->
+                                <!-- Part m2_5x10__configuration__10_32 -->
+                                <!-- Part m3x6__configuration__8_15 -->
+                                <!-- Part hn05_i101_15 -->
+                                <geom type="mesh" class="visual"
+                                    pos="-2.37223e-16 1.11022e-15 0.05064"
+                                    quat="1.06651e-13 -1.04725e-14 -1.02141e-14 -1" mesh="hn05_i101"
+                                    material="hn05_i101_material" />
+                                <!-- Part rx64_cap_15 -->
+                                <!-- Part mf128zz_15 -->
+                                <!-- Part mx106_9 -->
+                                <geom class="collision" pos="3.78037e-15 -0.01805 0.0285"
+                                    quat="1.04639e-14 1.06678e-13 -1 1.07414e-14" type="box"
+                                    size="0.0201 0.03255 0.023" />
+                                <geom type="mesh" class="visual"
+                                    pos="-6.72205e-17 5.55112e-16 0.0285"
+                                    quat="1.04639e-14 1.06678e-13 -1 1.07414e-14" mesh="mx106"
+                                    material="mx106_material" />
+                                <!-- Part hn05_n102_19 -->
+                                <geom type="mesh" class="visual" pos="-0.0259 -4.996e-16 0.0285"
+                                    quat="0.392847 0.587938 0.587938 -0.392847" mesh="hn05_n102"
+                                    material="hn05_n102_material" />
+                                <!-- Part mx106_10 -->
+                                <geom class="collision" pos="-0.0494 -0.01805 0.0285"
+                                    quat="0.707107 -2.61433e-13 0.707107 4.60027e-15" type="box"
+                                    size="0.0201 0.03255 0.023" />
+                                <geom type="mesh" class="visual" pos="-0.0494 -2.33147e-15 0.0285"
+                                    quat="0.707107 -2.61433e-13 0.707107 4.60027e-15" mesh="mx106"
+                                    material="mx106_material" />
+                                <!-- Part m3x8__configuration__12_30 -->
+                                <!-- Part hn05_n102_20 -->
+                                <geom type="mesh" class="visual"
+                                    pos="4.33681e-19 -5.55112e-17 0.0025"
+                                    quat="0.707107 -0.707107 0 2.90521e-30" mesh="hn05_n102"
+                                    material="hn05_n102_material" />
+                                <!-- Part m3x10__configuration__14_27 -->
+                                <!-- Part washer_ba1226_8 -->
+                                <!-- Part core_ba1226_6 -->
+                                <!-- Link right_foot_2 -->
+                                <body name="right_foot_2" pos="-0.0234 7.43849e-15 0.0285"
+                                    quat="1.70234e-13 0.707107 1.70308e-13 0.707107">
+                                    <!-- Joint from mx106_covered_block_ankle__configuration_default
+                                    to right_foot_2 -->
+                                    <joint name="right_ankle_roll" type="hinge"
+                                        range="-0.7853981633974483 0.7853981633974483" class="mx106" />
+                                    <inertial pos="-0.00454439 -0.0365542 0.0466461" mass="0.281856"
+                                        fullinertia="0.000718224 0.000922445 0.000265313 -2.50933e-06 4.64174e-06 -1.43537e-05" />
+                                    <!-- Part m2_5x10__configuration__10_33 -->
+                                    <!-- Part m2_5x10__configuration__10_34 -->
+                                    <!-- Part m2_5x10__configuration__10_35 -->
+                                    <!-- Part m2_5x10__configuration__10_36 -->
+                                    <!-- Part m3x8__configuration__8_5 -->
+                                    <!-- Part entretoise_m_f_8xm3__length__7_5 -->
+                                    <!-- Part m3x8__configuration__8_6 -->
+                                    <!-- Part m3x5__configuration__5_5 -->
+                                    <!-- Part ecrou_4_11 -->
+                                    <!-- Part m4x10__length__10_9 -->
+                                    <!-- Part m4x10__length__10_10 -->
+                                    <!-- Part m3x12__configuration__16_4 -->
+                                    <!-- Part ecrou_3__nylstop_false_8 -->
+                                    <!-- Part mounting_block_5 -->
+                                    <!-- Part ecrou_4_12 -->
+                                    <!-- Part m3x5__configuration_default_5 -->
+                                    <!-- Part ecrou_4_13 -->
+                                    <!-- Part entretoise_m_f_8xm3__length__7_6 -->
+                                    <!-- Part m4x10__length__10_11 -->
+                                    <!-- Part m3x5__configuration_default_6 -->
+                                    <!-- Part m4x10__length__10_12 -->
+                                    <!-- Part m3x5__configuration_default_7 -->
+                                    <!-- Part m3x8__configuration__8_7 -->
+                                    <!-- Part gauge_foot_protection_2 -->
+                                    <!-- Part foottip_2 -->
+                                    <!-- Part mounting_block_6 -->
+                                    <!-- Part foot_plate_2 -->
+                                    <geom class="collision" pos="-0.0055 -0.0415 0.03867"
+                                        quat="0.707107 -0.707107 1.48437e-13 1.27149e-13" type="box"
+                                        size="0.046 0.0788 0.0015" />
+                                    <geom type="mesh" class="visual" pos="-0.0055 -0.043 0.03867"
+                                        quat="1.27149e-13 -1.48593e-13 -0.707107 -0.707107"
+                                        mesh="foot_plate" material="foot_plate_material" />
+                                    <!-- Part m3x8__configuration__8_8 -->
+                                    <!-- Part mounting_block_7 -->
+                                    <!-- Part m4x10__length__10_13 -->
+                                    <!-- Part m3x5__configuration__5_6 -->
+                                    <!-- Part ecrou_4_14 -->
+                                    <!-- Part ecrou_4_15 -->
+                                    <!-- Part m3x5__configuration__5_7 -->
+                                    <!-- Part m4x10__length__10_14 -->
+                                    <!-- Part entretoise_m_f_8xm3__length__7_7 -->
+                                    <!-- Part entretoise_m_f_8xm3__length__7_8 -->
+                                    <!-- Part m3x12__configuration__16_5 -->
+                                    <!-- Part m3x12__configuration__16_6 -->
+                                    <!-- Part ecrou_3__nylstop_false_9 -->
+                                    <!-- Part ecrou_4_16 -->
+                                    <!-- Part ecrou_4_17 -->
+                                    <!-- Part ecrou_4_18 -->
+                                    <!-- Part ecrou_3__nylstop_false_10 -->
+                                    <!-- Part m3x5__configuration__5_8 -->
+                                    <!-- Part m4x10__length__10_15 -->
+                                    <!-- Part mounting_block_8 -->
+                                    <!-- Part m3x5__configuration_default_8 -->
+                                    <!-- Part m4x10__length__10_16 -->
+                                    <!-- Part u_base_motors_blocs_2 -->
+                                    <geom class="collision" pos="-5.58581e-16 -0.036875 0.02817"
+                                        quat="0.5 0.5 0.5 -0.5" type="box"
+                                        size="0.02617 0.015 0.003125" />
+                                    <geom type="mesh" class="visual" pos="0.015 -0.04 0.05434"
+                                        quat="0.5 -0.5 0.5 0.5" mesh="u_base_motors_blocs"
+                                        material="u_base_motors_blocs_material" />
+                                    <!-- Part ecrou_2_5_110 -->
+                                    <!-- Part ecrou_2_5_111 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_217 -->
+                                    <!-- Part m2_5x4__configuration_default_63 -->
+                                    <!-- Part u_side_small_2 -->
+                                    <geom type="mesh" class="visual" pos="0.015 -0.04 0.05634"
+                                        quat="1.95882e-13 -1.92485e-14 -1 4.6912e-15"
+                                        mesh="u_side_small" material="u_side_small_material" />
+                                    <!-- Part m2_5x5__configuration_size_147 -->
+                                    <!-- Part ecrou_2_5_112 -->
+                                    <!-- Part ecrou_2_5_113 -->
+                                    <!-- Part u_side_small_with_trace_2 -->
+                                    <geom type="mesh" class="visual" pos="-0.015 -0.04 -3.46945e-18"
+                                        quat="1 -0 -3.33067e-16 0" mesh="u_side_small_with_trace"
+                                        material="u_side_small_with_trace_material" />
+                                    <!-- Part load_cell_40kg_5 -->
+                                    <!-- Part nylon_ring_5 -->
+                                    <!-- Part cleat_5 -->
+                                    <geom class="collision" pos="0.0325 -0.0535 0.10947"
+                                        quat="1.19949e-13 3.0043e-14 -0.707107 0.707107"
+                                        type="cylinder" size="0.008 0.008" />
+                                    <geom type="mesh" class="visual" pos="0.0325 -0.0615 0.10947"
+                                        quat="1.06059e-13 -6.383e-14 -1 -3.02396e-14" mesh="cleat"
+                                        material="cleat_material" />
+                                    <!-- Part load_cell_40kg_6 -->
+                                    <!-- Part nylon_ring_6 -->
+                                    <!-- Part cleat_6 -->
+                                    <geom class="collision" pos="-0.0435 -0.0535 0.10947"
+                                        quat="1.19949e-13 3.0043e-14 -0.707107 0.707107"
+                                        type="cylinder" size="0.008 0.008" />
+                                    <geom type="mesh" class="visual" pos="-0.0435 -0.0615 0.10947"
+                                        quat="1.06059e-13 -6.383e-14 -1 -3.02396e-14" mesh="cleat"
+                                        material="cleat_material" />
+                                    <!-- Part load_cell_40kg_7 -->
+                                    <!-- Part nylon_ring_7 -->
+                                    <!-- Part cleat_7 -->
+                                    <geom class="collision" pos="0.0325 -0.0535 -0.03213"
+                                        quat="0.707107 0.707107 -6.21725e-15 -1.63679e-16"
+                                        type="cylinder" size="0.008 0.008" />
+                                    <geom type="mesh" class="visual" pos="0.0325 -0.0615 -0.03213"
+                                        quat="1 2.97123e-14 -3.9968e-15 -4.19857e-15" mesh="cleat"
+                                        material="cleat_material" />
+                                    <!-- Part load_cell_40kg_8 -->
+                                    <!-- Part nylon_ring_8 -->
+                                    <!-- Part cleat_8 -->
+                                    <geom class="collision" pos="-0.0435 -0.0535 -0.03213"
+                                        quat="0.707107 0.707107 -6.21725e-15 -1.63679e-16"
+                                        type="cylinder" size="0.008 0.008" />
+                                    <geom type="mesh" class="visual" pos="-0.0435 -0.0615 -0.03213"
+                                        quat="1 2.97123e-14 -3.9968e-15 -4.19857e-15" mesh="cleat"
+                                        material="cleat_material" />
+                                    <!-- Part m2_5x5__configuration_size_148 -->
+                                    <!-- Part m2_5x5__configuration_size_149 -->
+                                    <!-- Part m2_5x5__configuration_size_150 -->
+                                    <!-- Part m2_5x5__configuration_size_151 -->
+                                    <!-- Part m2_5x5__configuration_size_152 -->
+                                    <!-- Part m2_5x4__configuration_default_64 -->
+                                    <!-- Part m2_5x4__configuration_default_65 -->
+                                    <!-- Part m2_5x4__configuration_default_66 -->
+                                    <!-- Part m2_5x4__configuration_default_67 -->
+                                    <!-- Part m2_5x4__configuration_default_68 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_218 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_219 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_220 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_221 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_222 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_223 -->
+                                    <!-- Part m2_5x8__configuration_copy_of_6_224 -->
+                                    <!-- Frame right_foot -->
+                                    <site group="0" name="right_foot" pos="-0.003 -0.0615 0.03617"
+                                        quat="0.5 -0.5 -0.5 -0.5" />
+                                    <!-- Frame right_ps_0 -->
+                                    <site group="0" name="right_ps_0" pos="-0.0435 -0.0615 0.10947"
+                                        quat="0.5 -0.5 -0.5 -0.5" />
+                                    <!-- Frame right_ps_1 -->
+                                    <site group="0" name="right_ps_1" pos="-0.0435 -0.0615 -0.03213"
+                                        quat="0.5 -0.5 -0.5 -0.5" />
+                                    <!-- Frame right_ps_2 -->
+                                    <site group="0" name="right_ps_2" pos="0.0325 -0.0615 -0.03213"
+                                        quat="0.5 -0.5 -0.5 -0.5" />
+                                    <!-- Frame right_ps_3 -->
+                                    <site group="0" name="right_ps_3" pos="0.0325 -0.0615 0.10947"
+                                        quat="0.5 -0.5 -0.5 -0.5" />
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+    <asset>
+        <mesh file="bague_serrage_3010.stl" />
+        <mesh file="mx106.stl" />
+        <mesh file="u_side_shoulder.stl" />
+        <mesh file="u_side_femur_mir_2023.stl" />
+        <mesh file="u_side_shoulder_mir.stl" />
+        <mesh file="hn05_n102.stl" />
+        <mesh file="u_side_femur_2023.stl" />
+        <mesh file="u_side_small.stl" />
+        <mesh file="fr05_s101.stl" />
+        <mesh file="base_3.stl" />
+        <mesh file="head_plate_d_2023.stl" />
+        <mesh file="u_side_small_with_trace_2023.stl" />
+        <mesh file="hand_2023.stl" />
+        <mesh file="u_side_small_2023.stl" />
+        <mesh file="mx_64at_ar.stl" />
+        <mesh file="u_base_64.stl" />
+        <mesh file="x_plate_23_front.stl" />
+        <mesh file="fr05_h101.stl" />
+        <mesh file="u_base_motors_blocs.stl" />
+        <mesh file="tibia_plate_2023.stl" />
+        <mesh file="fr05_f101.stl" />
+        <mesh file="u_base_106_2023.stl" />
+        <mesh file="head_plate_g_2023.stl" />
+        <mesh file="tibia_marker.stl" />
+        <mesh file="renfort_tibia__configuration_simple_bearing.stl" />
+        <mesh file="chestplate.stl" />
+        <mesh file="base_4.stl" />
+        <mesh file="base_1.stl" />
+        <mesh file="flexible_part.stl" />
+        <mesh file="ptgrey_camera.stl" />
+        <mesh file="foot_plate.stl" />
+        <mesh file="handle.stl" />
+        <mesh file="base_2.stl" />
+        <mesh file="cleat.stl" />
+        <mesh file="u_side_neck.stl" />
+        <mesh file="humerus_plate.stl" />
+        <mesh file="torso_top_plate_nuc_23.stl" />
+        <mesh file="u_side_small_with_trace.stl" />
+        <mesh file="hn05_i101.stl" />
+        <mesh file="shoulder.stl" />
+        <mesh file="u_base_motors_blocs_2023.stl" />
+        <mesh file="chestplate_marker.stl" />
+        <material name="fr05_s101_material" rgba="0.917647 0.917647 0.917647 1" />
+        <material name="x_plate_23_front_material" rgba="0.262745 0.282353 0.301961 1" />
+        <material name="chestplate_marker_material" rgba="1 0.392157 0.392157 1" />
+        <material name="torso_top_plate_nuc_23_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="chestplate_material" rgba="0.262745 0.282353 0.301961 1" />
+        <material name="handle_material" rgba="0.717647 0.717647 0.717647 1" />
+        <material name="hn05_n102_material" rgba="0.278431 0.278431 0.278431 1" />
+        <material name="mx_64at_ar_material" rgba="0.168627 0.168627 0.168627 1" />
+        <material name="flexible_part_material" rgba="0.901961 0.901961 0.901961 1" />
+        <material name="base_2_material" rgba="0.4 0.4 0.4 1" />
+        <material name="base_3_material" rgba="0.4 0.4 0.4 1" />
+        <material name="base_4_material" rgba="0.4 0.4 0.4 1" />
+        <material name="base_1_material" rgba="0.4 0.4 0.4 1" />
+        <material name="bague_serrage_3010_material" rgba="0.917647 0.917647 0.917647 1" />
+        <material name="shoulder_material" rgba="0.647059 0.647059 0.647059 1" />
+        <material name="u_base_64_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="u_side_neck_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="head_plate_d_2023_material" rgba="0.701961 0.682353 0.623529 1" />
+        <material name="ptgrey_camera_material" rgba="0.4 0.4 0.4 1" />
+        <material name="head_plate_g_2023_material" rgba="0.701961 0.682353 0.623529 1" />
+        <material name="hn05_i101_material" rgba="0.8 0.776471 0.713725 1" />
+        <material name="u_side_shoulder_mir_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="u_side_shoulder_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="fr05_h101_material" rgba="0.501961 0.486275 0.439216 1" />
+        <material name="humerus_plate_material" rgba="0.647059 0.647059 0.647059 1" />
+        <material name="hand_2023_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="u_side_small_2023_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="u_base_motors_blocs_2023_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="u_side_small_with_trace_2023_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="fr05_f101_material" rgba="0.8 0.776471 0.713725 1" />
+        <material name="mx106_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="u_base_106_2023_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="u_side_femur_mir_2023_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="u_side_femur_2023_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="tibia_marker_material" rgba="1 0.392157 0.392157 1" />
+        <material name="renfort_tibia__configuration_simple_bearing_material"
+            rgba="0.262745 0.282353 0.301961 1" />
+        <material name="tibia_plate_2023_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="foot_plate_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="u_base_motors_blocs_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="u_side_small_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="u_side_small_with_trace_material" rgba="0.301961 0.301961 0.301961 1" />
+        <material name="cleat_material" rgba="0.301961 0.290196 0.262745 1" />
+    </asset>
+
+    <sensor>
+        <gyro site="torso" name="gyro" />
+        <velocimeter site="torso" name="local_linvel"/>
+        <accelerometer site="torso" name="accelerometer"/>
+        <framezaxis objtype="site" objname="torso" name="upvector"/>
+        <framexaxis objtype="site" objname="torso" name="forwardvector"/>
+        <framelinvel objtype="site" objname="torso" name="global_linvel"/>
+        <frameangvel objtype="site" objname="torso" name="global_angvel"/>
+        <framepos objtype="site" objname="torso" name="position"/>
+        <framequat objtype="site" objname="torso" name="orientation"/>
+        <framelinvel objtype="site" objname="left_foot" name="l_foot_global_linvel"/>
+        <framelinvel objtype="site" objname="left_foot" name="r_foot_global_linvel"/>
+        <framexaxis objtype="site" objname="left_foot" name="l_foot_upvector"/>
+        <framexaxis objtype="site" objname="left_foot" name="r_foot_upvector"/>
+        <framepos objtype="site" objname="left_foot" name="l_foot_pos"/>
+        <framepos objtype="site" objname="left_foot" name="r_foot_pos"/>
+
+        <!-- TODO: Add site on each cleat by checking on Onshape -->
+        <!-- <force site="left_foot_cleat_front_right" name="left_foot_cleat_front_right" /> -->
+        <!-- <force site="left_foot_cleat_front_left" name="left_foot_cleat_front_left" /> -->
+        <!-- <force site="left_foot_cleat_back_right" name="left_foot_cleat_back_right" /> -->
+        <!-- <force site="left_foot_cleat_back_left" name="left_foot_cleat_back_left" /> -->
+        <!-- <force site="right_foot_cleat_front_right" name="right_foot_cleat_front_right" /> -->
+        <!-- <force site="right_foot_cleat_front_left" name="right_foot_cleat_front_left" /> -->
+        <!-- <force site="right_foot_cleat_back_right" name="right_foot_cleat_back_right" /> -->
+        <!-- <force site="right_foot_cleat_back_left" name="right_foot_cleat_back_left" /> -->
+    </sensor>
+
+    <actuator>
+        <position class="mx106" name="left_hip_roll" joint="left_hip_roll"
+            ctrlrange="-0.523599 0.610865" />
+        <position class="mx106" name="left_hip_pitch" joint="left_hip_pitch"
+            ctrlrange="-1.5708 0.67" />
+        <position class="mx106" name="left_knee" joint="left_knee" ctrlrange="0 2.2689280" />
+        <position class="mx106" name="left_ankle_pitch" joint="left_ankle_pitch"
+            ctrlrange="-1.308996 1.308996" />
+        <position class="mx106" name="left_ankle_roll" joint="left_ankle_roll"
+            ctrlrange="-0.785398 0.785398" />
+        <position class="mx106" name="right_hip_roll" joint="right_hip_roll"
+            ctrlrange="-0.610865 0.523599" />
+        <position class="mx106" name="right_hip_pitch" joint="right_hip_pitch"
+            ctrlrange="-1.5708 0.67" />
+        <position class="mx106" name="right_knee" joint="right_knee" ctrlrange="0 2.2689280" />
+        <position class="mx106" name="right_ankle_pitch" joint="right_ankle_pitch"
+            ctrlrange="-1.308996 1.308996" />
+        <position class="mx106" name="right_ankle_roll" joint="right_ankle_roll"
+            ctrlrange="-0.785398 0.785398" />
+
+        <position class="mx64" name="head_yaw" joint="head_yaw" ctrlrange="-2.0944 2.0944" />
+        <position class="mx64" name="head_pitch" joint="head_pitch" ctrlrange="-0.785398 1.5708" />
+        <position class="mx64" name="left_hip_yaw" joint="left_hip_yaw" ctrlrange="-1.0472 1.0472" />
+        <position class="mx64" name="right_hip_yaw" joint="right_hip_yaw" ctrlrange="-1.0472 1.0472" />
+        <position class="mx64" name="left_shoulder_pitch" joint="left_shoulder_pitch"
+            ctrlrange="-2.18166 2.18166" />
+        <position class="mx64" name="left_shoulder_roll" joint="left_shoulder_roll"
+            ctrlrange="-0.261799 1.309" />
+        <position class="mx64" name="left_elbow" joint="left_elbow" ctrlrange="-2.79253 0.261799" />
+        <position class="mx64" name="right_shoulder_pitch" joint="right_shoulder_pitch"
+            ctrlrange="-2.18166 2.18166" />
+        <position class="mx64" name="right_shoulder_roll" joint="right_shoulder_roll"
+            ctrlrange="-1.309 0.261799" />
+        <position class="mx64" name="right_elbow" joint="right_elbow" ctrlrange="-2.79253 0.261799" />
+    </actuator>
+    <equality />
+</mujoco>
