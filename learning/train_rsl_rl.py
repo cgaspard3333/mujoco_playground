@@ -42,6 +42,11 @@ from mujoco_playground import wrapper_torch
 from mujoco_playground.config import locomotion_params
 from mujoco_playground.config import manipulation_params
 
+# Enable persistent compilation cache.
+jax.config.update("jax_compilation_cache_dir", "./jax_cache")
+jax.config.update("jax_persistent_cache_min_entry_size_bytes", -1)
+jax.config.update("jax_persistent_cache_min_compile_time_secs", 0)
+
 # Suppress logs if you want
 logging.set_verbosity(logging.WARNING)
 

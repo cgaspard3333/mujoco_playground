@@ -37,7 +37,6 @@ from rsl_rl.runners import OnPolicyRunner
 import torch
 import wandb
 import time
-from learning import simulator
 
 import mujoco_playground
 from mujoco_playground import registry
@@ -61,19 +60,9 @@ _ENV_NAME = flags.DEFINE_string(
 )
 _LOAD_RUN_NAME = flags.DEFINE_string("load_run_name", None, "Run name to load from (for checkpoint restoration).")
 _CHECKPOINT_NUM = flags.DEFINE_integer("checkpoint_num", -1, "Checkpoint number to load from.")
-_PLAY_ONLY = flags.DEFINE_boolean("play_only", False, "If true, only play with the model and do not train.")
-_USE_WANDB = flags.DEFINE_boolean(
-    "use_wandb",
-    False,
-    "Use Weights & Biases for logging (ignored in play-only mode).",
-)
-_SUFFIX = flags.DEFINE_string("suffix", None, "Suffix for the experiment name.")
 _SEED = flags.DEFINE_integer("seed", 1, "Random seed.")
-_NUM_ENVS = flags.DEFINE_integer("num_envs", 4096, "Number of parallel envs.")
 _DEVICE = flags.DEFINE_string("device", "cuda:0", "Device for training.")
 _MULTI_GPU = flags.DEFINE_boolean("multi_gpu", False, "If true, use multi-GPU training (distributed).")
-_CAMERA = flags.DEFINE_string("camera", None, "Camera name to use for rendering.")
-
 
 def get_rl_config(env_name: str) -> config_dict.ConfigDict:
     if env_name in registry.manipulation._envs:
@@ -99,7 +88,7 @@ def main(argv):
         device_rank = int(device.split(":")[-1]) if "cuda" in device else 0
 
     # If play-only, use fewer envs
-    num_envs = 1 if _PLAY_ONLY.value else _NUM_ENVS.value
+    num_envs = 1
 
     # Load default config from registry
     env_cfg = registry.get_default_config(_ENV_NAME.value)

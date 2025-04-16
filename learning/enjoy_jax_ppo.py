@@ -21,6 +21,12 @@ import os
 import time
 import warnings
 
+xla_flags = os.environ.get("XLA_FLAGS", "")
+xla_flags += " --xla_gpu_triton_gemm_any=True"
+os.environ["XLA_FLAGS"] = xla_flags
+os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"
+os.environ["MUJOCO_GL"] = "egl"
+
 from absl import app
 from absl import flags
 from absl import logging
@@ -34,6 +40,7 @@ import jax.numpy as jp
 import mediapy as media
 from ml_collections import config_dict
 import mujoco
+import mujoco.viewer
 from orbax import checkpoint as ocp
 from tensorboardX import SummaryWriter
 import wandb
@@ -45,21 +52,13 @@ from mujoco_playground.config import dm_control_suite_params
 from mujoco_playground.config import locomotion_params
 from mujoco_playground.config import manipulation_params
 
-xla_flags = os.environ.get("XLA_FLAGS", "")
-xla_flags += " --xla_gpu_triton_gemm_any=True"
-os.environ["XLA_FLAGS"] = xla_flags
-os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"
-os.environ["MUJOCO_GL"] = "egl"
+# Ignore the info logs from brax
+logging.set_verbosity(logging.WARNING)
 
 # Enable persistent compilation cache.
 jax.config.update("jax_compilation_cache_dir", "./jax_cache")
 jax.config.update("jax_persistent_cache_min_entry_size_bytes", -1)
 jax.config.update("jax_persistent_cache_min_compile_time_secs", 0)
-
-# Ignore the info logs from brax
-logging.set_verbosity(logging.WARNING)
-
-# Suppress warnings
 
 # Suppress RuntimeWarnings from JAX
 warnings.filterwarnings("ignore", category=RuntimeWarning, module="jax")
@@ -223,28 +222,12 @@ def main(argv):
   print(f"Environment Config:\n{env_cfg}")
   print(f"PPO Training Parameters:\n{ppo_params}")
 
-  # Generate unique experiment name
-  now = datetime.now()
-  timestamp = now.strftime("%Y%m%d-%H%M%S")
-  exp_name = f"{_ENV_NAME.value}-{timestamp}"
-  if _SUFFIX.value is not None:
-    exp_name += f"-{_SUFFIX.value}"
-  print(f"Experiment name: {exp_name}")
+  exp_name = _LOAD_CHECKPOINT_PATH.value
 
   # Set up logging directory
   logdir = epath.Path("logs").resolve() / exp_name
   logdir.mkdir(parents=True, exist_ok=True)
   print(f"Logs are being stored in: {logdir}")
-
-  # Initialize Weights & Biases if required
-  if _USE_WANDB.value and not _PLAY_ONLY.value:
-    wandb.init(project="mjxrl", entity="rhoban-officiel-rhoban", name=exp_name)
-    wandb.config.update(env_cfg.to_dict())
-    wandb.config.update({"env_name": _ENV_NAME.value})
-
-  # Initialize TensorBoard if required
-  if _USE_TB.value and not _PLAY_ONLY.value:
-    writer = SummaryWriter(logdir)
 
   # Handle checkpoint loading
   if _LOAD_CHECKPOINT_PATH.value is not None:
@@ -331,24 +314,6 @@ def main(argv):
       num_eval_envs=num_eval_envs,
   )
 
-  times = [time.monotonic()]
-
-  # Progress function for logging
-  def progress(num_steps, metrics):
-    times.append(time.monotonic())
-
-    # Log to Weights & Biases
-    if _USE_WANDB.value and not _PLAY_ONLY.value:
-      wandb.log(metrics, step=num_steps)
-
-    # Log to TensorBoard
-    if _USE_TB.value and not _PLAY_ONLY.value:
-      for key, value in metrics.items():
-        writer.add_scalar(key, value, num_steps)
-      writer.flush()
-
-    print(f"{num_steps}: reward={metrics['eval/episode_reward']:.3f}")
-
   # Load evaluation environment
   eval_env = (
       None if _VISION.value else registry.load(_ENV_NAME.value, config=env_cfg)
@@ -357,14 +322,8 @@ def main(argv):
   # Train or load the model
   make_inference_fn, params, _ = train_fn(  # pylint: disable=no-value-for-parameter
       environment=env,
-      progress_fn=progress,
       eval_env=None if _VISION.value else eval_env,
   )
-
-  print("Done training.")
-  if len(times) > 1:
-    print(f"Time to JIT compile: {times[1] - times[0]}")
-    print(f"Time to train: {times[-1] - times[1]}")
 
   print("Starting inference...")
 
@@ -373,9 +332,6 @@ def main(argv):
   jit_inference_fn = jax.jit(inference_fn)
 
   # Prepare for evaluation
-  eval_env = (
-      None if _VISION.value else registry.load(_ENV_NAME.value, config=env_cfg)
-  )
   num_envs = 1
   if _VISION.value:
     eval_env = env
@@ -392,10 +348,33 @@ def main(argv):
   state0 = (
       jax.tree_util.tree_map(lambda x: x[0], state) if _VISION.value else state
   )
-  rollout = [state0]
 
+  base_env = eval_env
+
+  d = mujoco.MjData(base_env.mj_model)
+  viewer = mujoco.viewer.launch_passive(base_env.mj_model, d)
+
+  # Viewer settings
+  viewer.opt.flags[mujoco.mjtVisFlag.mjVIS_TRANSPARENT] = True
+  viewer.opt.flags[mujoco.mjtVisFlag.mjVIS_PERTFORCE] = True
+  viewer.opt.flags[mujoco.mjtVisFlag.mjVIS_CONTACTFORCE] = False
+
+
+  frame = 0
+  viewer_start = time.time()
+  realtime = True
+  
   # Run evaluation rollout
-  for _ in range(env_cfg.episode_length):
+  while True:
+      # Sync the state with the viewer
+    if realtime:
+        current_ts = viewer_start + frame * base_env.dt
+        to_sleep = current_ts - time.time()
+        if to_sleep > 0:
+            time.sleep(to_sleep)
+    
+    viewer.sync()
+
     act_rng, rng = jax.random.split(rng)
     ctrl, _ = jit_inference_fn(state.obs, act_rng)
     state = jit_step(state, ctrl)
@@ -404,28 +383,16 @@ def main(argv):
         if _VISION.value
         else state
     )
-    rollout.append(state0)
+
+    d.qpos, d.qvel = state.data.qpos, state.data.qvel
+    d.mocap_pos, d.mocap_quat = state.data.mocap_pos, state.data.mocap_quat
+    d.xfrc_applied = state.data.xfrc_applied
+
+    mujoco.mj_step(base_env.mj_model, d)
+    frame += 1
+
     if state0.done:
       break
-
-  # Render and save the rollout
-  render_every = 2
-  fps = 1.0 / eval_env.dt / render_every
-  print(f"FPS for rendering: {fps}")
-
-  traj = rollout[::render_every]
-
-  scene_option = mujoco.MjvOption()
-  scene_option.flags[mujoco.mjtVisFlag.mjVIS_TRANSPARENT] = False
-  scene_option.flags[mujoco.mjtVisFlag.mjVIS_PERTFORCE] = False
-  scene_option.flags[mujoco.mjtVisFlag.mjVIS_CONTACTFORCE] = False
-
-  frames = eval_env.render(
-      traj, height=480, width=640, scene_option=scene_option
-  )
-  media.write_video("rollout.mp4", frames, fps=fps)
-  print("Rollout video saved as 'rollout.mp4'.")
-
 
 if __name__ == "__main__":
   app.run(main)
