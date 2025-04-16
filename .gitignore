@@ -7,3 +7,4 @@ mujoco_menagerie
 checkpoints/
 jax_cache/
 *.mp4
+logs/
