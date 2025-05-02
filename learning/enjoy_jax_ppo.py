@@ -140,16 +140,10 @@ _VALUE_OBS_KEY = flags.DEFINE_string("value_obs_key", "state", "Value obs key")
 
 def get_rl_config(env_name: str) -> config_dict.ConfigDict:
   if env_name in mujoco_playground.manipulation._envs:
-    if _VISION.value:
-      return manipulation_params.brax_vision_ppo_config(env_name)
     return manipulation_params.brax_ppo_config(env_name)
   elif env_name in mujoco_playground.locomotion._envs:
-    if _VISION.value:
-      return locomotion_params.brax_vision_ppo_config(env_name)
     return locomotion_params.brax_ppo_config(env_name)
   elif env_name in mujoco_playground.dm_control_suite._envs:
-    if _VISION.value:
-      return dm_control_suite_params.brax_vision_ppo_config(env_name)
     return dm_control_suite_params.brax_ppo_config(env_name)
 
   raise ValueError(f"Env {env_name} not found in {registry.ALL_ENVS}.")
@@ -162,6 +156,13 @@ def main(argv):
 
   # Load environment configuration
   env_cfg = registry.get_default_config(_ENV_NAME.value)
+  env_cfg.pert_config.enable = True
+  env_cfg.pert_config.velocity_kick = [3.0, 6.0]
+  env_cfg.pert_config.kick_wait_times = [5.0, 15.0]
+  env_cfg.command_config.a = [1.5, 0.8, 2*jp.pi]
+
+  velocity_kick_range = [0.0, 0.0]  # Disable velocity kick.
+  kick_duration_range = [0.05, 0.2]
 
   ppo_params = get_rl_config(_ENV_NAME.value)
 
@@ -214,9 +215,6 @@ def main(argv):
   if _VALUE_OBS_KEY.present:
     ppo_params.network_factory.value_obs_key = _VALUE_OBS_KEY.value
 
-  if _VISION.value:
-    env_cfg.vision = True
-    env_cfg.vision_config.render_batch_size = ppo_params.num_envs
   env = registry.load(_ENV_NAME.value, config=env_cfg)
 
   print(f"Environment Config:\n{env_cfg}")
@@ -267,11 +265,8 @@ def main(argv):
   if "network_factory" in training_params:
     del training_params["network_factory"]
 
-  network_fn = (
-      ppo_networks_vision.make_ppo_networks_vision
-      if _VISION.value
-      else ppo_networks.make_ppo_networks
-  )
+  network_fn = ppo_networks.make_ppo_networks
+
   if hasattr(ppo_params, "network_factory"):
     network_factory = functools.partial(
         network_fn, **ppo_params.network_factory
@@ -284,21 +279,7 @@ def main(argv):
         _ENV_NAME.value
     )
 
-  if _VISION.value:
-    env = wrapper.wrap_for_brax_training(
-        env,
-        vision=True,
-        num_vision_envs=env_cfg.vision_config.render_batch_size,
-        episode_length=ppo_params.episode_length,
-        action_repeat=ppo_params.action_repeat,
-        randomization_fn=training_params.get("randomization_fn"),
-    )
-
-  num_eval_envs = (
-      ppo_params.num_envs
-      if _VISION.value
-      else ppo_params.get("num_eval_envs", 128)
-  )
+  num_eval_envs = ppo_params.get("num_eval_envs", 128)
 
   if "num_eval_envs" in training_params:
     del training_params["num_eval_envs"]
@@ -310,19 +291,17 @@ def main(argv):
       policy_params_fn=policy_params_fn,
       seed=_SEED.value,
       restore_checkpoint_path=restore_checkpoint_path,
-      wrap_env_fn=None if _VISION.value else wrapper.wrap_for_brax_training,
+      wrap_env_fn= wrapper.wrap_for_brax_training,
       num_eval_envs=num_eval_envs,
   )
 
   # Load evaluation environment
-  eval_env = (
-      None if _VISION.value else registry.load(_ENV_NAME.value, config=env_cfg)
-  )
+  eval_env = registry.load(_ENV_NAME.value, config=env_cfg)
 
   # Train or load the model
   make_inference_fn, params, _ = train_fn(  # pylint: disable=no-value-for-parameter
       environment=env,
-      eval_env=None if _VISION.value else eval_env,
+      eval_env=eval_env,
   )
 
   print("Starting inference...")
@@ -333,26 +312,22 @@ def main(argv):
 
   # Prepare for evaluation
   num_envs = 1
-  if _VISION.value:
-    eval_env = env
-    num_envs = env_cfg.vision_config.render_batch_size
 
   jit_reset = jax.jit(eval_env.reset)
   jit_step = jax.jit(eval_env.step)
 
+  x_vel = 0.1 #@param {type: "number"}
+  y_vel = 0.0  #@param {type: "number"}
+  yaw_vel = 0.0  #@param {type: "number"}
+  command = jp.array([x_vel, y_vel, yaw_vel])
+
   rng = jax.random.PRNGKey(123)
   rng, reset_rng = jax.random.split(rng)
-  if _VISION.value:
-    reset_rng = jp.asarray(jax.random.split(reset_rng, num_envs))
   state = jit_reset(reset_rng)
-  state0 = (
-      jax.tree_util.tree_map(lambda x: x[0], state) if _VISION.value else state
-  )
+  state.info["command"] = command
 
-  base_env = eval_env
-
-  d = mujoco.MjData(base_env.mj_model)
-  viewer = mujoco.viewer.launch_passive(base_env.mj_model, d)
+  data = mujoco.MjData(eval_env.mj_model)
+  viewer = mujoco.viewer.launch_passive(eval_env.mj_model, data, show_left_ui=False, show_right_ui=False)
 
   # Viewer settings
   viewer.opt.flags[mujoco.mjtVisFlag.mjVIS_TRANSPARENT] = True
@@ -368,7 +343,7 @@ def main(argv):
   while True:
       # Sync the state with the viewer
     if realtime:
-        current_ts = viewer_start + frame * base_env.dt
+        current_ts = viewer_start + frame * eval_env.dt
         to_sleep = current_ts - time.time()
         if to_sleep > 0:
             time.sleep(to_sleep)
@@ -378,21 +353,13 @@ def main(argv):
     act_rng, rng = jax.random.split(rng)
     ctrl, _ = jit_inference_fn(state.obs, act_rng)
     state = jit_step(state, ctrl)
-    state0 = (
-        jax.tree_util.tree_map(lambda x: x[0], state)
-        if _VISION.value
-        else state
-    )
-
-    d.qpos, d.qvel = state.data.qpos, state.data.qvel
-    d.mocap_pos, d.mocap_quat = state.data.mocap_pos, state.data.mocap_quat
-    d.xfrc_applied = state.data.xfrc_applied
-
-    mujoco.mj_step(base_env.mj_model, d)
+    state.info["command"] = command
+    data.ctrl = ctrl
+    mujoco.mj_step(eval_env.mj_model, data)
     frame += 1
 
-    if state0.done:
-      break
+    # if state.done:
+    #   break
 
 if __name__ == "__main__":
   app.run(main)
